@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btn_login">Ingresar</string>
+    <string name="txt_bienvenida">Bienvenido, Hotel hilton</string>
+    <string name="app_name">Hotel_Servicios</string>
+</resources>

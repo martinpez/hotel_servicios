@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="126dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/circulo_de_usuario" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="text"
+        android:textColor="#FFFFFF"
+        tools:text="name@flowbite.com" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="303dp"
+        android:layout_height="6dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="text"
+        android:text="Name"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="301dp"
+        android:layout_height="15dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:ems="10"
+        android:gravity="bottom"
+        android:inputType="textPassword"
+        android:text="● ● ● ● ● ● ● ● ● ● ● ● ● ●"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center|left"
+        android:text="Forgot email?"
+        android:textAlignment="gravity"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:autoText="false"
+        android:gravity="bottom"
+        android:text="© 2024 Martinpez™. All Rights Reserved."
+        android:textAlignment="gravity"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp" />
+
+</LinearLayout>
