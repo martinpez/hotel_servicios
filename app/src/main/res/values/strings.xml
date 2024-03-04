@@ -2,4 +2,7 @@
     <string name="btn_login">Login</string>
     <string name="txt_bienvenida">Welcome, Hotel hilton</string>
     <string name="app_name">Hotel_Service</string>
+    <string name="txt_reserver">
+        © 2024 <a href = "https://github.com/martinpez/hotel_servicios" > Martinpez™. </a> All Rights Reserved.
+</string>
 </resources>

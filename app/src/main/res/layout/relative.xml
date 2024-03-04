@@ -98,13 +98,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_alignParentEnd="true"
-        android:textSize="14sp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="250dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="191dp"
         android:ems="10"
-
         android:inputType="phone"
-        android:text="Phone" />
+
+        android:text="Phone"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTextNumber3"
@@ -139,9 +139,9 @@
         android:layout_height="78dp"
         android:layout_below="@+id/toolbar"
         android:layout_alignEnd="@+id/spinner_cargo"
-        android:layout_marginTop="426dp"
-        android:layout_marginEnd="204dp"
-        android:text="Hilton plus"
+        android:layout_marginTop="399dp"
+        android:layout_marginEnd="199dp"
+        android:text="Vehicle"
         android:textSize="16sp" />
 
     <Button
@@ -164,5 +164,18 @@
         android:layout_above="@+id/editTextPhone"
         android:layout_marginBottom="-5dp"
         app:srcCompat="@drawable/reshot_icon_5_stars_gr43f7skch" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="67dp"
+        android:layout_height="24dp"
+        android:layout_above="@+id/editTextNumber3"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignEnd="@+id/editTextPhone"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="6dp"
+        android:gravity="left"
+        android:textAlignment="gravity" />
 
 </RelativeLayout>

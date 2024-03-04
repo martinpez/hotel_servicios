@@ -4,6 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="296dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center|top"
+        android:text="Welome, Hotel hilton !!"
+        android:textAlignment="center"
+        android:textSize="34sp" />
+
     <Button
         android:id="@+id/button"
         android:layout_width="194dp"
@@ -17,14 +26,5 @@
         android:layout_height="282dp"
         android:layout_gravity="center"
         app:srcCompat="@android:drawable/ic_menu_myplaces" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="296dp"
-        android:layout_height="88dp"
-        android:layout_gravity="center|top"
-        android:text="Welome, Hotel hilton !!"
-        android:textAlignment="center"
-        android:textSize="34sp" />
 
 </FrameLayout>
