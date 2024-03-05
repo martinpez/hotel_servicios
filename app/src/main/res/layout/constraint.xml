@@ -69,11 +69,11 @@
         app:layout_constraintVertical_bias="0.562" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/txt_const"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="C A R T"
+        android:text="@string/txt_const"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         android:textStyle="normal|bold"
@@ -89,7 +89,7 @@
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7">
+        app:layout_constraintTop_toBottomOf="@+id/txt_const">
 
         <TextView
             android:id="@+id/textView111"
@@ -103,11 +103,11 @@
             tools:layout_editor_absoluteY="347dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="344dp"
-            android:text="Guided Excursions"
+            android:text="@string/radio_seven"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.164"
@@ -126,11 +126,11 @@
             tools:layout_editor_absoluteY="299dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="296dp"
-            android:text="Room with jacuzzi"
+            android:text="@string/radio_six"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.163"
@@ -149,11 +149,11 @@
             tools:layout_editor_absoluteY="251dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="248dp"
-            android:text="Gift Items and Souvenirs"
+            android:text="@string/radio_five"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.185"
@@ -172,11 +172,11 @@
             tools:layout_editor_absoluteY="200dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
-            android:text=" VIP Services"
+            android:text="@string/radio_four"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.149"
@@ -195,11 +195,11 @@
             tools:layout_editor_absoluteY="152dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="152dp"
-            android:text="Recreational activities"
+            android:text="@string/radio_three"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.176"
@@ -218,11 +218,11 @@
             tools:layout_editor_absoluteY="104dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="104dp"
-            android:text=" Special Dinners"
+            android:text="@string/radio_two"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.157"
@@ -230,11 +230,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radio_seven"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-            android:text="Massages and Spa Treatments"
+            android:text="@string/radio_one"
             android:textColor="#FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.214"
@@ -291,12 +291,12 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_costin"
         android:layout_width="105dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="34dp"
-        android:text="Pay now"
+        android:text="ADD"
         android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/toolbar5"
         app:layout_constraintEnd_toEndOf="parent"

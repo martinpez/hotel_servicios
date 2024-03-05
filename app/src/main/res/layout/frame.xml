@@ -5,20 +5,20 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_frame"
         android:layout_width="296dp"
         android:layout_height="88dp"
         android:layout_gravity="center|top"
-        android:text="Welome, Hotel hilton !!"
+        android:text="@string/txt_frame"
         android:textAlignment="center"
         android:textSize="34sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_frame"
         android:layout_width="194dp"
         android:layout_height="58dp"
         android:layout_gravity="bottom|center"
-        android:text="Register" />
+        android:text="@string/btn_frame" />
 
     <ImageView
         android:id="@+id/imageView2"

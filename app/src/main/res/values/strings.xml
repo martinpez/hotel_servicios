@@ -2,7 +2,27 @@
     <string name="btn_login">Login</string>
     <string name="txt_bienvenida">Welcome, Hotel hilton</string>
     <string name="app_name">Hotel_Service</string>
-    <string name="txt_reserver">
+    <string name="txt_reserver" translatable="false">
         © 2024 <a href = "https://github.com/martinpez/hotel_servicios" > Martinpez™. </a> All Rights Reserved.
 </string>
+    <string name="txt_forgot">Forgot email?</string>
+    <string name="txt_frame">Welome, Hotel hilton !!</string>
+    <string name="btn_frame">Register</string>
+    <string name="radio_one">Massages and Spa Treatments</string>
+    <string name="radio_two">Special Dinners</string>
+    <string name="radio_three">Recreational activities</string>
+    <string name="radio_four">VIP Services</string>
+    <string name="radio_five">Gift Items and Souvenirs</string>
+    <string name="radio_six">Room with jacuzzi</string>
+    <string name="radio_seven">Guided Excursions</string>
+    <string name="txt_const">C A R T</string>
+    <string name="btn_costin">ADD</string>
+    <string name="txt_day">Days stayed</string>
+    <string name="txt_stay">Parking car</string>
+    <string name="txt_tablet_invo">Invoice</string>
+    <string name="txt_Subt" translatable="false">Subtotal</string>
+    <string name="txt_disc" translatable="false">Discounts</string>
+    <string name="txt_sub" translatable="false">Subtotal</string>
+    <string name="txt_iva" translatable="false">IVA</string>
+    <string name="txt_total" translatable="false">Total</string>
 </resources>

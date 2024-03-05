@@ -8,15 +8,15 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
-        android:layout_width="449dp"
-        android:layout_height="1dp"
+        android:layout_width="424dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/img_linear"
         android:layout_width="328dp"
         android:layout_height="110dp"
         android:layout_gravity="center"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/circulo_de_usuario" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/input_login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -36,7 +36,7 @@
         tools:text="name@flowbite.com" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/input_name"
         android:layout_width="303dp"
         android:layout_height="6dp"
         android:layout_gravity="center"
@@ -48,7 +48,7 @@
         android:textColor="#FFFFFF" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/input_password"
         android:layout_width="301dp"
         android:layout_height="15dp"
         android:layout_gravity="center"
@@ -60,13 +60,13 @@
         android:textColor="#FFFFFF" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txt_forgot"
         android:layout_width="165dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center|left"
-        android:text="Forgot email?"
+        android:text="@string/txt_forgot"
         android:textAlignment="gravity"
         android:textColor="#FFFFFF"
         android:textSize="20sp" />
