@@ -15,7 +15,7 @@
     <string name="radio_five">Gift Items and Souvenirs</string>
     <string name="radio_six">Room with jacuzzi</string>
     <string name="radio_seven">Guided Excursions</string>
-    <string name="txt_const">C A R T</string>
+    <string name="txt_const" translatable="false">C A R T</string>
     <string name="btn_costin">ADD</string>
     <string name="txt_day">Days stayed</string>
     <string name="txt_stay">Parking car</string>

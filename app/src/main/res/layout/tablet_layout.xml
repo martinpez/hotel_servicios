@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:stretchColumns="1">
+<TableRow android:background="#128675">
+
+    <TextView
+        android:id="@+id/txt_tablet_invo"
+        android:layout_column="0"
+        android:padding="3dip"
+        android:text="@string/txt_tablet_invo"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/txt_Subt"
+        android:layout_column="2"
+        android:padding="4dip"
+        android:text="@string/txt_Subt"
+        android:textColor="@android:color/white" />
+</TableRow>
+<TableRow>
+
+    <TextView
+        android:id="@+id/txt_day"
+        android:layout_column="0"
+        android:padding="3dip"
+        android:text="@string/txt_day" />
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_column="2"
+        android:gravity="left"
+        android:padding="4dip"
+        android:text="$50.00" />
+</TableRow>
+<TableRow>
+
+    <TextView
+        android:id="@+id/txt_stay"
+        android:layout_column="0"
+        android:padding="3dip"
+        android:text="@string/txt_stay" />
+
+    <TextView
+        android:layout_column="2"
+        android:gravity="left"
+        android:padding="4dip"
+        android:text="$100.00" />
+</TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_mass"
+            android:layout_width="150dp"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_one" />
+
+        <TextView
+
+            android:layout_width="57dp"
+            android:layout_height="match_parent"
+            android:layout_column="2"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:padding="4dip"
+            android:text="$999.00"
+            android:textAlignment="gravity" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_gui"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_seven" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$500.00" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="value for kids" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$0" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_recre"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_three" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$200.00" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_gift"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_five" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$0" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_vip"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_four" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$800.00" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_two" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$0" />
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:id="@+id/txt_room"
+            android:layout_column="0"
+            android:padding="3dip"
+            android:text="@string/radio_six" />
+
+        <TextView
+            android:layout_column="2"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$100.00" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#051D37">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#051D37"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txt_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_sub" />
+        <TextView
+            android:layout_column="1"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$ 2.849.00" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txt_disc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_disc" />
+        <TextView
+            android:layout_column="1"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$300.00" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/txt_iva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_iva" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$ 200.00" />
+    </TableRow>
+
+    <TableRow
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_total" />
+
+        <TextView
+            android:layout_column="1"
+            android:gravity="left"
+            android:padding="4dip"
+            android:text="$ 2.749.00"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold|italic" />
+
+    </TableRow>
+
+
+    <Button
+        android:id="@+id/btn_costin"
+        android:layout_width="50dp"
+        android:layout_height="53dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="34dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:text="Pay now"
+
+        android:textColor="#000000"
+
+        />
+
+
+</TableLayout>

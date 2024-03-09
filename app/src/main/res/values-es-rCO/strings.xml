@@ -3,4 +3,18 @@
     <string name="btn_login">Ingresar</string>
     <string name="txt_bienvenida">Bienvenido, Hotel hilton</string>
     <string name="app_name">Hotel_Servicios</string>
+    <string name="txt_forgot">¿Olvidaste el correo electrónico?</string>
+    <string name="txt_frame">Bienvenido, Hotel hillton !!</string>
+    <string name="btn_frame">Registrarme</string>
+    <string name="radio_one">Massages and Spa Treatments</string>
+    <string name="radio_two">Cenas Especiales</string>
+    <string name="radio_three">Actividades recreativas</string>
+    <string name="radio_four">Servicio VIP</string>
+    <string name="radio_five">Artículos de regalo y souvenirs</string>
+    <string name="radio_six">Room with jacuzzi</string>
+    <string name="radio_seven">Excursiones guiadas</string>
+    <string name="btn_costin">AGREGAR</string>
+    <string name="txt_day">Días de estancia</string>
+    <string name="txt_stay">Parqueadero carros</string>
+    <string name="txt_tablet_invo">Factura</string>
 </resources>
