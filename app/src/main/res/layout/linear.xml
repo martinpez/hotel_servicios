@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#020617"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -21,6 +22,7 @@
         android:layout_height="110dp"
         android:layout_gravity="center"
         android:layout_weight="1"
+        android:paddingTop="30dp"
         app:srcCompat="@drawable/circulo_de_usuario" />
 
     <EditText
@@ -31,9 +33,10 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="bottom"
+        android:hint="name@flowbite.com"
         android:inputType="text"
         android:textColor="#FFFFFF"
-        tools:text="name@flowbite.com" />
+        android:textColorHint="#7A7272" />
 
     <EditText
         android:id="@+id/input_name"
@@ -43,9 +46,10 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="bottom"
+        android:hint="Name"
         android:inputType="text"
-        android:text="Name"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#7A7272" />
 
     <EditText
         android:id="@+id/input_password"
@@ -55,13 +59,14 @@
         android:layout_weight="1"
         android:ems="10"
         android:gravity="bottom"
+        android:hint="● ● ● ● ● ● ● ● ● ● ● ● ● ●"
         android:inputType="textPassword"
-        android:text="● ● ● ● ● ● ● ● ● ● ● ● ● ●"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:textColorHint="#7A7272" />
 
     <TextView
         android:id="@+id/txt_forgot"
-        android:layout_width="165dp"
+        android:layout_width="228dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
@@ -76,9 +81,11 @@
         android:layout_width="411dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginLeft="19dp"
         android:layout_weight="1"
         android:autoText="false"
         android:gravity="bottom"
+        android:paddingBottom="20dp"
         android:text="@string/txt_reserver"
         android:textAlignment="gravity"
         android:textColor="#FFFFFF"

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#020617">
 
     <ImageView
         android:id="@+id/imageView9"
@@ -47,8 +48,9 @@
         android:layout_marginTop="201dp"
         android:layout_marginEnd="211dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="text"
-        android:text="Name"
+        android:textColorHint="#7A7272"
         android:textSize="14sp" />
 
     <EditText
@@ -60,9 +62,10 @@
         android:layout_marginTop="192dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
-        android:textSize="14sp"
+        android:hint="Surnames"
         android:inputType="text"
-        android:text="surnames" />
+        android:textColorHint="#7A7272"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -75,13 +78,13 @@
         android:layout_marginEnd="212dp"
         android:layout_marginBottom="-319dp"
         android:ems="10"
+        android:hint="Number of children "
         android:inputType="number"
-        android:textSize="14sp"
-        android:text="Number of children " />
+        android:textColorHint="#7A7272"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTextNumber2"
-        android:textSize="14sp"
         android:layout_width="185dp"
         android:layout_height="56dp"
         android:layout_below="@+id/toolbar"
@@ -89,8 +92,10 @@
         android:layout_marginTop="276dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
+        android:hint="Days of stay"
         android:inputType="number"
-        android:text="Days of stay" />
+        android:textColorHint="#7A7272"
+        android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTextPhone"
@@ -101,36 +106,38 @@
         android:layout_marginTop="58dp"
         android:layout_marginEnd="191dp"
         android:ems="10"
-        android:inputType="phone"
+        android:hint="Phone"
 
-        android:text="Phone"
+        android:inputType="phone"
+        android:textColorHint="#7A7272"
         android:textSize="14sp" />
 
     <EditText
         android:id="@+id/editTextNumber3"
         android:layout_width="153dp"
-        android:textSize="14sp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/toolbar"
-
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="-147dp"
+
+        android:layout_marginEnd="214dp"
+        android:layout_marginBottom="-151dp"
         android:ems="10"
+        android:hint="ID"
         android:inputType="number"
-        android:text="ID" />
+        android:textColorHint="#7A7272"
+        android:textSize="14sp" />
 
     <Spinner
         android:id="@+id/spinner_cargo"
         android:layout_width="362dp"
         android:layout_height="37dp"
         android:layout_below="@+id/toolbar"
-        android:textSize="14sp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="357dp"
         android:layout_toLeftOf="@+id/spinner_estado_civil"
-        android:entries="@android:array/emailAddressTypes" />
+        android:entries="@android:array/emailAddressTypes"
+        android:textSize="14sp" />
 
     <CheckBox
         android:id="@+id/checkBox2"
