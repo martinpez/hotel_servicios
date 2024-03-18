@@ -320,7 +320,7 @@
             app:layout_constraintVertical_bias="0.028" />
 
         <Button
-            android:id="@+id/btn_costin"
+            android:id="@+id/btn_tablet"
             android:layout_width="105dp"
             android:layout_height="45dp"
             android:text="ADD"

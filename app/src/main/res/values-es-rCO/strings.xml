@@ -17,4 +17,6 @@
     <string name="txt_day">Días de estancia</string>
     <string name="txt_stay">Parqueadero carros</string>
     <string name="txt_tablet_invo">Factura</string>
+    <string name="btn_tablet">Pagar</string>
+    <string name="Errorinicio">Rellenar campos</string>
 </resources>

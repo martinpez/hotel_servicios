@@ -31,6 +31,7 @@
         android:layout_width="283dp"
         android:layout_height="62dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
         android:text="Reservations"
@@ -152,15 +153,16 @@
         android:textSize="16sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnreserv"
         android:layout_width="199dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
         android:layout_alignEnd="@+id/spinner_cargo"
         android:layout_marginTop="534dp"
         android:layout_marginEnd="95dp"
-        android:text="Reserve"
+        android:backgroundTint="#2B5755"
 
+        android:text="Reserve"
         android:textColor="#FFFFFF"
         android:textSize="15dp" />
 

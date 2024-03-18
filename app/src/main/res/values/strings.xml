@@ -3,7 +3,7 @@
     <string name="txt_bienvenida">Welcome, Hotel hilton</string>
     <string name="app_name">Hotel_Service</string>
     <string name="txt_reserver" translatable="false">
-        © 2024 <a href = "https://github.com/martinpez/hotel_servicios" > Martinpez™. </a> All Rights Reserved.
+        © 2024 <a href="https://github.com/martinpez"> Martinpez™. </a> All Rights Reserved.
 </string>
     <string name="txt_forgot">Forgot email?</string>
     <string name="txt_frame">Welome, Hotel hilton !!</string>
@@ -25,4 +25,9 @@
     <string name="txt_sub" translatable="false">Subtotal</string>
     <string name="txt_iva" translatable="false">IVA</string>
     <string name="txt_total" translatable="false">Total</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnlinear">Register account</string>
+    <string name="btn_tablet">Pay now</string>
+    <string name="Errorinicio" > Fill fields </string>
 </resources>

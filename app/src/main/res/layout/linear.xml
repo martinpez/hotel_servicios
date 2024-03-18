@@ -74,7 +74,17 @@
         android:text="@string/txt_forgot"
         android:textAlignment="gravity"
         android:textColor="#FFFFFF"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnlinear"
+        android:layout_width="192dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:backgroundTint="#FFFFFF"
+        android:text="@string/btnlinear"
+        app:cornerRadius="@android:dimen/system_app_widget_background_radius" />
 
     <TextView
         android:id="@+id/textView3"
