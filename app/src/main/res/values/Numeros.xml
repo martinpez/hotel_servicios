@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="phone_identifiers_array">
+        <item>+57</item> <!-- Colombia -->
+        <item>+1</item>  <!-- Estados Unidos -->
+        <item>+52</item> <!-- México -->
+        <item>+86</item> <!-- China -->
+        <item>+44</item> <!-- Reino Unido -->
+        <item>+33</item> <!-- Francia -->
+        <item>+91</item> <!-- India -->
+        <item>+61</item> <!-- Australia -->
+        <item>+55</item> <!-- Brasil -->
+        <item>+81</item> <!-- Japón -->
+        <!-- Puedes agregar más identificadores de teléfono aquí según sea necesario -->
+    </string-array>
+</resources>

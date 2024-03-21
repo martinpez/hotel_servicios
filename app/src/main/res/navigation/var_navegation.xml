@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_cart_to_buy"
             app:destination="@id/buy" />
+        <action
+            android:id="@+id/action_cart_to_buy2"
+            app:destination="@id/buy" />
     </fragment>
     <fragment
         android:id="@+id/buy"

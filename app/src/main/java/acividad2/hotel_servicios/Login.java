@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -27,8 +28,10 @@ public class Login extends Fragment implements View.OnClickListener{
      private EditText input_name;
      private EditText input_login;
      private EditText input_password;
+     private TextView txt_const;
 
     private String Errorinicio = "Fill fields";
+    private String bienvenida = "Welcome";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -98,12 +101,25 @@ public class Login extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         if (!input_name.getText().toString().equals("") & !input_login.getText().toString().equals("") & !input_password.getText().toString().equals("")  ) {
-            Navigation.findNavController(view).navigate(R.id.reservation);
-        } else {
+
+                    Bundle bundle = new Bundle();
+
+                    bundle.putString("nameUser" , input_name.getText().toString());
+                    bundle.putString("nameEmail" , input_login.getText().toString());
+
+
+                    Navigation.findNavController(view).navigate(R.id.reservation,bundle);
+                Toast.makeText(getContext(), bienvenida + " " + input_name.getText(), Toast.LENGTH_LONG).show();
+        }
+         else {
             input_name.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
             input_password.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
             input_login.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
-            Toast.makeText(getContext(), Errorinicio, Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), Errorinicio, Toast.LENGTH_SHORT).show();
         }
     }
+
+
+
+
 }

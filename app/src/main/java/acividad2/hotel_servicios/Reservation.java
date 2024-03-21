@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,7 +21,13 @@ import android.widget.Button;
  */
 public class Reservation extends Fragment implements View.OnClickListener{
 
-    public Button btnreserv;
+
+    private Button btnreserv;
+
+    private EditText inp_name;
+    private EditText inp_email;
+
+    private EditText inp_days;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +67,9 @@ public class Reservation extends Fragment implements View.OnClickListener{
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
@@ -67,19 +78,31 @@ public class Reservation extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.relative, container, false);
     }
-
+    Bundle bundle = new Bundle();
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         btnreserv = (Button) getActivity().findViewById(R.id.btnreserv);
         btnreserv.setOnClickListener(this);
+
+        inp_email= (EditText) getActivity().findViewById(R.id.inp_email);
+        inp_name= (EditText) getActivity().findViewById(R.id.inp_name);
+
+        inp_email.setText(getArguments().getString("nameEmail"));
+        inp_name .setText(getArguments().getString("nameUser"));
+
+
+
+
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == btnreserv.getId()){
-            Navigation.findNavController(view).navigate(R.id.cart);
+            bundle.putString("nombre" , inp_name.getText().toString());
+           // Toast.makeText(getContext() , inp_name.getText(),Toast.LENGTH_LONG).show();
+            Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
 
     }

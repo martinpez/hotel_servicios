@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/</item>
+        <item>@font/leckerli_one</item>
+        <item>@font/metal_mania</item>
+        <item>@font/monsieur_la_doulaise</item>
+        <item>@font/niconne</item>
+        <item>@font/pinyon_script</item>
+    </array>
+</resources>

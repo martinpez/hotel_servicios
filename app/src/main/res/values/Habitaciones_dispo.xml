@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+
+    <string-array name="rooms">
+        <item>room 34 - 3 peoples</item>s
+        <item>room 35 - 4 peoples</item>
+        <item>room 36 - 5 peoples</item>
+        <item>room 37 - 6 peoples</item>
+        <item>room 38 - 7 peoples</item>
+        <item>room 31 - 2 peoples</item>
+        <item>room 32 - 1 peoples</item>
+        <item>room 33 - 2 peoples</item>
+        <item>room 42 - 2 peoples</item>
+        <item>room 41 - 1 peoples</item>
+        <!-- Puedes agregar más identificadores de teléfono aquí según sea necesario -->
+    </string-array>
+</resources>

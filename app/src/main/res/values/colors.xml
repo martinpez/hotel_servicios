@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="cyan">#71717a</color>
+    <color name="stale">#020617</color>
+    <color name="cafe">#44403c</color>
+    <color name="gray">#6b7280</color>
+    <color name="cafe_os">#57534e</color>
+    <color name="base">#cbd5e1</color>
+    <item name="my_spinner_text_color"  type="color">#44403c</item>
+    <item name="my_spinner_text_color2"  type="color">#FFFFFFFF</item>
+
 </resources>

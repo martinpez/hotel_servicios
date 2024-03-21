@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/discon_menu"
+        android:title="@string/discon_menu" />
+    <item
+        android:id="@+id/changePrice_menu"
+        android:icon="@drawable/administrador"
+        android:title="@string/changePrice_menu" />
+    <item
+        android:id="@+id/abou_menu"
+        android:title="@string/abou_menu" />
+</menu>

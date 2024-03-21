@@ -2,17 +2,21 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#cbd5e1">
 
     <TextView
         android:id="@+id/txt_frame"
         android:layout_width="296dp"
-        android:layout_height="88dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center|top"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/leckerli_one"
         android:text="@string/txt_frame"
         android:textAlignment="center"
-        android:textSize="34sp" />
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="48sp" />
 
     <Button
         android:id="@+id/btn_frame"
@@ -20,8 +24,9 @@
         android:layout_height="58dp"
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="40dp"
-        android:backgroundTint="#FF9800"
-        android:text="@string/btn_frame" />
+        android:backgroundTint="@color/my_spinner_text_color"
+        android:text="@string/btn_frame"
+        android:textColor="#000000" />
 
     <ImageView
         android:id="@+id/imageView2"

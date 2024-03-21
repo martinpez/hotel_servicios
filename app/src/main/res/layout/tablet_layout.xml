@@ -2,7 +2,7 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#020617"
+    android:background="@color/base"
     android:paddingTop="20dp"
     android:stretchColumns="1">
 
@@ -12,31 +12,32 @@
         android:paddingBottom="40dp">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/Button_back"
             android:layout_width="33dp"
             android:layout_height="31dp"
             android:layout_gravity="left"
             android:layout_marginStart="16dp"
-            android:backgroundTint="#020617"
+            android:backgroundTint="@color/base"
             android:src="@drawable/flecha_tabla" />
 
     </TableRow>
 
-    <TableRow android:background="#1A1E6C">
+    <TableRow android:background="@color/gray">
 
         <TextView
             android:id="@+id/txt_tablet_invo"
             android:layout_column="0"
             android:padding="3dip"
             android:text="@string/txt_tablet_invo"
-            android:textColor="#FFFFFF" />
+            android:textColor="@color/cafe" />
 
         <TextView
             android:id="@+id/txt_Subt"
             android:layout_column="2"
             android:padding="4dip"
             android:text="@string/txt_Subt"
-            android:textColor="@android:color/white" />
+            android:textColor="@color/cafe"
+            />
     </TableRow>
 
     <TableRow>
@@ -45,14 +46,17 @@
             android:id="@+id/txt_day"
             android:layout_column="0"
             android:padding="3dip"
-            android:text="@string/txt_day" />
+            android:text="@string/txt_day"
+            android:textColor="@color/cafe" />
 
         <TextView
+            android:id="@+id/txt_precio_one_buy"
             android:layout_height="match_parent"
             android:layout_column="2"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
-            android:text="$50.00" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -61,13 +65,18 @@
             android:id="@+id/txt_stay"
             android:layout_column="0"
             android:padding="3dip"
-            android:text="@string/txt_stay" />
+            android:text="@string/txt_stay"
+            android:textColor="@color/cafe"
+            />
 
         <TextView
+            android:id="@+id/txt_precio_2_buy"
             android:layout_column="2"
             android:gravity="left"
             android:padding="4dip"
-            android:text="$100.00" />
+            android:text="0.00"
+            android:textColor="@color/cafe"
+            />
     </TableRow>
 
     <TableRow>
@@ -75,35 +84,36 @@
         <TextView
             android:id="@+id/txt_mass"
             android:layout_width="150dp"
+            android:textColor="@color/cafe"
             android:layout_column="0"
             android:padding="3dip"
             android:text="@string/radio_one" />
 
         <TextView
-
-            android:layout_width="57dp"
-            android:layout_height="match_parent"
+            android:id="@+id/txt_precio_3_buy"
             android:layout_column="2"
+            android:textColor="@color/cafe"
             android:layout_gravity="left"
-            android:gravity="center"
             android:padding="4dip"
-            android:text="$999.00"
+            android:text="0.00"
             android:textAlignment="gravity" />
     </TableRow>
 
     <TableRow>
 
         <TextView
-            android:id="@+id/txt_gui"
+            android:textColor="@color/cafe"
             android:layout_column="0"
             android:padding="3dip"
             android:text="@string/radio_seven" />
 
         <TextView
+            android:id="@+id/txt_precio_4_buy"
             android:layout_column="2"
             android:gravity="left"
             android:padding="4dip"
-            android:text="$500.00" />
+            android:textColor="@color/cafe"
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -111,13 +121,17 @@
         <TextView
             android:layout_column="0"
             android:padding="3dip"
+            android:textColor="@color/cafe"
+
             android:text="value for kids" />
 
         <TextView
+            android:id="@+id/txt_precio_5_buy"
             android:layout_column="2"
             android:gravity="left"
             android:padding="4dip"
-            android:text="$0" />
+            android:textColor="@color/cafe"
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -125,14 +139,17 @@
         <TextView
             android:id="@+id/txt_recre"
             android:layout_column="0"
+            android:textColor="@color/cafe"
             android:padding="3dip"
             android:text="@string/radio_three" />
 
         <TextView
+            android:id="@+id/txt_precio_6_buy"
             android:layout_column="2"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
-            android:text="$200.00" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -140,14 +157,17 @@
         <TextView
             android:id="@+id/txt_gift"
             android:layout_column="0"
+            android:textColor="@color/cafe"
             android:padding="3dip"
             android:text="@string/radio_five" />
 
         <TextView
+            android:id="@+id/txt_precio_7_buy"
             android:layout_column="2"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
-            android:text="$0" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -156,27 +176,33 @@
             android:id="@+id/txt_vip"
             android:layout_column="0"
             android:padding="3dip"
+            android:textColor="@color/cafe"
             android:text="@string/radio_four" />
 
         <TextView
+            android:id="@+id/txt_precio_8_buy"
             android:layout_column="2"
+            android:textColor="@color/cafe"
             android:gravity="left"
             android:padding="4dip"
-            android:text="$800.00" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
 
         <TextView
             android:layout_column="0"
+            android:textColor="@color/cafe"
             android:padding="3dip"
             android:text="@string/radio_two" />
 
         <TextView
+            android:id="@+id/txt_precio_9_buy"
             android:layout_column="2"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
-            android:text="$0" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow>
@@ -184,26 +210,30 @@
         <TextView
             android:id="@+id/txt_room"
             android:layout_column="0"
+            android:textColor="@color/cafe"
             android:padding="3dip"
             android:text="@string/radio_six" />
 
         <TextView
+            android:id="@+id/txt_precio_10_buy"
             android:layout_column="2"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
-            android:text="$100.00" />
+            android:text="0.00" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1A1E6C">
+        android:background="@color/gray">
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
+            android:textColor="@color/cafe"
             android:layout_height="wrap_content"
-            android:background="#1A1E6C"
+            android:background="@color/gray"
             android:text="" />
     </TableRow>
 
@@ -215,11 +245,13 @@
             android:id="@+id/txt_sub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/cafe"
             android:text="@string/txt_sub" />
 
         <TextView
             android:layout_column="1"
             android:gravity="left"
+            android:textColor="@color/cafe"
             android:padding="4dip"
             android:text="$ 2.849.00" />
 
@@ -232,6 +264,7 @@
         <TextView
             android:id="@+id/txt_disc"
             android:layout_width="wrap_content"
+            android:textColor="@color/cafe"
             android:layout_height="wrap_content"
             android:text="@string/txt_disc" />
 
@@ -239,6 +272,7 @@
             android:layout_column="1"
             android:gravity="left"
             android:padding="4dip"
+            android:textColor="@color/cafe"
             android:text="$300.00" />
     </TableRow>
 
@@ -250,10 +284,12 @@
             android:id="@+id/txt_iva"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_iva" />
+            android:text="@string/txt_iva"
+            android:textColor="@color/cafe" />
 
         <TextView
             android:layout_column="1"
+            android:textColor="@color/cafe"
             android:gravity="left"
             android:padding="4dip"
             android:text="$ 200.00" />
@@ -268,21 +304,22 @@
             android:id="@+id/txt_total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_total" />
+            android:text="@string/txt_total"
+            android:textColor="@color/cafe" />
 
         <TextView
             android:layout_column="1"
             android:gravity="left"
             android:padding="4dip"
+            android:textColor="@color/cafe"
             android:text="$ 2.749.00"
-            android:textColor="#FFFFFF"
             android:textStyle="bold|italic" />
 
     </TableRow>
 
 
     <Button
-        android:id="@+id/btn_tablet"
+        android:id="@+id/btn_pagar"
         android:layout_width="50dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
@@ -291,9 +328,10 @@
         android:layout_marginRight="70dp"
         android:layout_marginBottom="34dp"
 
-        android:text="@string/btn_tablet"
+        android:backgroundTint="@color/white"
 
-        android:textColor="#000000" />
+        android:text="@string/btn_tablet"
+        android:textColor="@color/cafe" />
 
 
 </TableLayout>

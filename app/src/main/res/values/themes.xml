@@ -1,9 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Hotel_Servicios" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/black</item>
+    <style name="Base.Theme.Hotel_Servicios" parent="Theme.Material3.Dark.NoActionBar">
+
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/cafe</item>
+        <item name="android:textColor">@color/my_spinner_text_color</item>
+
+
     </style>
 
-    <style name="Theme.Hotel_Servicios" parent="Base.Theme.Hotel_Servicios" />
 </resources>

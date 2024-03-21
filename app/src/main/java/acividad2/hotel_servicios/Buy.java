@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +22,9 @@ import android.widget.Button;
 public class Buy extends Fragment implements View.OnClickListener {
 
     private Button btn_tablet;
+    private ImageButton Button_back;
+
+    private TextView txt_precio_one_buy,txt_precio_2_buy,txt_precio_3_buy,txt_precio_4_buy,txt_precio_5_buy,txt_precio_6_buy,txt_precio_7_buy,txt_precio_8_buy,txt_precio_9_buy,txt_precio_10_buy;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,6 +65,8 @@ public class Buy extends Fragment implements View.OnClickListener {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    Bundle bundle = new Bundle();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,14 +79,43 @@ public class Buy extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_tablet = (Button) getActivity().findViewById(R.id.btn_tablet);
+            // ALL BUTTON
+        btn_tablet  = (Button) getActivity().findViewById(R.id.btn_add);
+        Button_back= (ImageButton) getActivity().findViewById(R.id.Button_back);
+        // ALL BUTTON this for implements
+        Button_back.setOnClickListener(this);
         btn_tablet.setOnClickListener(this);
+        // ALL TEXTVIEW
+        txt_precio_3_buy = (TextView) getActivity().findViewById(R.id.txt_precio_3_buy);
+        txt_precio_one_buy= (TextView) getActivity().findViewById(R.id.txt_precio_one_buy);
+        txt_precio_2_buy= (TextView) getActivity().findViewById(R.id.txt_precio_2_buy);
+        txt_precio_4_buy= (TextView) getActivity().findViewById(R.id.txt_precio_4_buy);
+        txt_precio_5_buy= (TextView) getActivity().findViewById(R.id.txt_precio_5_buy);
+        txt_precio_6_buy= (TextView) getActivity().findViewById(R.id.txt_precio_6_buy);
+        txt_precio_7_buy= (TextView) getActivity().findViewById(R.id.txt_precio_7_buy);
+        txt_precio_8_buy= (TextView) getActivity().findViewById(R.id.txt_precio_8_buy);
+        txt_precio_9_buy= (TextView) getActivity().findViewById(R.id.txt_precio_9_buy);
+        txt_precio_10_buy= (TextView) getActivity().findViewById(R.id.txt_precio_10_buy);
+        // INSERTS DE TODOS LOS BUNBLE DE CART
+        txt_precio_one_buy.setText(getArguments().getString(""));
+        txt_precio_2_buy.setText(getArguments().getString(""));
+        txt_precio_3_buy.setText(getArguments().getString("pice7"));
+        txt_precio_4_buy.setText(getArguments().getString("pice2"));
+        txt_precio_5_buy.setText(getArguments().getString(""));
+        txt_precio_6_buy.setText(getArguments().getString("pice5"));
+        txt_precio_7_buy.setText(getArguments().getString("pice3"));
+        txt_precio_8_buy.setText(getArguments().getString("pice4"));
+        txt_precio_9_buy.setText(getArguments().getString("pice6"));
+        txt_precio_10_buy.setText(getArguments().getString("pice1"));
+
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == btn_tablet.getId()){
             Navigation.findNavController(view).navigate(R.id.home2);
+        } else if (view.getId() == Button_back.getId()) {
+            Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
     }
 }

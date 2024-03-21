@@ -3,7 +3,7 @@
     <string name="txt_bienvenida">Welcome, Hotel hilton</string>
     <string name="app_name">Hotel_Service</string>
     <string name="txt_reserver" translatable="false">
-        © 2024 <a href="https://github.com/martinpez"> Martinpez™. </a> All Rights Reserved.
+        © 2024 Martinpez™.All Rights Reserved.
 </string>
     <string name="txt_forgot">Forgot email?</string>
     <string name="txt_frame">Welome, Hotel hilton !!</string>
@@ -30,4 +30,10 @@
     <string name="btnlinear">Register account</string>
     <string name="btn_tablet">Pay now</string>
     <string name="Errorinicio" > Fill fields </string>
+    <string name="spinner_cargo">Rooms Available</string>
+    <string name="discon_menu">Redeem discount</string>
+    <string name="changePrice_menu">Change price</string>
+    <string name="abou_menu">About</string>
+    <string name="txt_reservat">Reservations</string>
+    <string name="btnreserv">Reserve</string>
 </resources>
