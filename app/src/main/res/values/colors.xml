@@ -9,6 +9,6 @@
     <color name="cafe_os">#57534e</color>
     <color name="base">#cbd5e1</color>
     <item name="my_spinner_text_color"  type="color">#44403c</item>
-    <item name="my_spinner_text_color2"  type="color">#FFFFFFFF</item>
+
 
 </resources>
