@@ -3,39 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/var_navegation"
-    app:startDestination="@id/home2">
-    <fragment
-        android:id="@+id/home2"
-        android:name="acividad2.hotel_servicios.Home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_home2_to_login"
-            app:destination="@id/login" />
-    </fragment>
+    app:startDestination="@id/login">
     <fragment
         android:id="@+id/login"
         android:name="acividad2.hotel_servicios.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/action_login_to_home2"
-            app:destination="@id/home2" />
+            android:id="@+id/action_login_to_accaunt"
+            app:destination="@id/accaunt" />
         <action
-            android:id="@+id/action_login_to_reservation"
-            app:destination="@id/reservation" />
+            android:id="@+id/action_login_to_cart"
+            app:destination="@id/cart" />
+        <action
+            android:id="@+id/action_login_to_accaunt2"
+            app:destination="@id/accaunt" />
     </fragment>
     <fragment
-        android:id="@+id/reservation"
-        android:name="acividad2.hotel_servicios.Reservation"
+        android:id="@+id/accaunt"
+        android:name="acividad2.hotel_servicios.Accaunt"
         android:label="fragment_reservation"
-        tools:layout="@layout/fragment_reservation" >
+        tools:layout="@layout/fragment_accaunt" >
         <action
-            android:id="@+id/action_reservation_to_login"
+            android:id="@+id/action_accaunt_to_login"
             app:destination="@id/login" />
-        <action
-            android:id="@+id/action_reservation_to_cart"
-            app:destination="@id/cart" />
     </fragment>
     <fragment
         android:id="@+id/cart"
@@ -43,22 +34,12 @@
         android:label="fragment_cart"
         tools:layout="@layout/fragment_cart" >
         <action
-            android:id="@+id/action_cart_to_reservation"
-            app:destination="@id/reservation" />
-        <action
             android:id="@+id/action_cart_to_buy"
-            app:destination="@id/buy" />
-        <action
-            android:id="@+id/action_cart_to_buy2"
             app:destination="@id/buy" />
     </fragment>
     <fragment
         android:id="@+id/buy"
         android:name="acividad2.hotel_servicios.Buy"
         android:label="fragment_buy"
-        tools:layout="@layout/fragment_buy" >
-        <action
-            android:id="@+id/action_buy_to_home2"
-            app:destination="@id/home2" />
-    </fragment>
+        tools:layout="@layout/fragment_buy" />
 </navigation>

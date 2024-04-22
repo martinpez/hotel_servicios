@@ -12,6 +12,18 @@
         <item>+61</item> <!-- Australia -->
         <item>+55</item> <!-- Brasil -->
         <item>+81</item> <!-- Japón -->
-        <!-- Puedes agregar más identificadores de teléfono aquí según sea necesario -->
+        <item>+7</item> <!-- Rusia -->
+        <item>+49</item> <!-- Alemania -->
+        <item>+39</item> <!-- Italia -->
+        <item>+34</item> <!-- España -->
+        <item>+351</item> <!-- Portugal -->
+        <item>+54</item> <!-- Argentina -->
+        <item>+64</item> <!-- Nueva Zelanda -->
+        <item>+82</item> <!-- Corea del Sur -->
+        <item>+971</item> <!-- Emiratos Árabes Unidos -->
+        <item>+966</item> <!-- Arabia Saudita -->
+        <item>+965</item> <!-- Kuwait -->
+        <item>+968</item> <!-- Omán -->
+        <item>+974</item> <!-- Qatar -->
     </string-array>
 </resources>

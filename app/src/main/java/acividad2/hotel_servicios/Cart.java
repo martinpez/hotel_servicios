@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ public class Cart extends Fragment  {
     private Button btn_add;
     private TextView txt_nombre_fit, price_1, price_2, price_3, price_4, price_5, price_6, price_7;
     private CheckBox rad_mas, rad_recre, rad_special, rad_vip, rad_gift, rad_room,rad_mass;
-    private ImageButton button_opcion,Button_User;
+    private ImageView image_Button_User;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -76,7 +77,7 @@ public class Cart extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.constraint, container, false);
+        return inflater.inflate(R.layout.cart, container, false);
     }
 
     Bundle bundle = new Bundle();
@@ -85,8 +86,8 @@ public class Cart extends Fragment  {
         super.onViewStateRestored(savedInstanceState);
 
         // IMAGESBUTTON
-        button_opcion = (ImageButton) getActivity().findViewById(R.id.button_opcion) ;
-        Button_User = (ImageButton) getActivity().findViewById(R.id.Button_User) ;
+        image_Button_User = getActivity().findViewById(R.id.image_Button_User);
+
 
         // ALL TEXTVIEW
         txt_nombre_fit = (TextView) getActivity().findViewById(R.id.txt_nombre_fit);
@@ -111,7 +112,7 @@ public class Cart extends Fragment  {
         rad_mass = (CheckBox) getActivity().findViewById(R.id.rad_mass);
 
         // Bundle Resividos
-        txt_nombre_fit.setText(getArguments().getString("nombre"));
+      //  txt_nombre_fit.setText(getArguments().getString("nombre"));
 
         // LOGICA DE LOS CHECK BOX
 
@@ -212,7 +213,7 @@ public class Cart extends Fragment  {
         });
 
         // ONCLIK DEL IMAGESBUTTON PARA EL POPUPMENU
-        button_opcion.setOnClickListener(new View.OnClickListener() {
+        image_Button_User.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // llama al metodo popup
@@ -221,18 +222,13 @@ public class Cart extends Fragment  {
             }
         });
 
-        Button_User.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext() , "coming soon ;)" ,Toast.LENGTH_LONG).show();
-            }
-        });
+
 
 
     }
     // LOGICA DEL POPUPMENU
         private void  popupmenu(){
-            PopupMenu p = new PopupMenu(getContext() , button_opcion);
+            PopupMenu p = new PopupMenu(getContext() , image_Button_User);
 
             p.getMenuInflater().inflate(R.menu.popmenu ,p.getMenu() );
             p.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {

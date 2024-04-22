@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,13 +23,12 @@ import android.widget.Toast;
  * Use the {@link Login#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Login extends Fragment implements View.OnClickListener{
+public class Login extends Fragment implements View.OnClickListener {
 
-     private Button btnlinear;
-     private EditText input_name;
+     private Button btn_acc;
      private EditText input_login;
      private EditText input_password;
-     private TextView txt_const;
+     private ImageView img_entry;
 
     private String Errorinicio = "Fill fields";
     private String bienvenida = "Welcome";
@@ -77,49 +77,37 @@ public class Login extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.linear, container, false);
+        return inflater.inflate(R.layout.login, container, false);
     }
+    Bundle bundle = new Bundle();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btnlinear = (Button) getActivity().findViewById(R.id.btnlinear);
-        btnlinear.setOnClickListener(this);
-
-        input_name = (EditText) getActivity().findViewById(R.id.input_name);
-        input_name.setOnClickListener(this);
+        btn_acc = (Button) getActivity().findViewById(R.id.btn_acc);
+        btn_acc.setOnClickListener(this);
 
         input_login = (EditText) getActivity().findViewById(R.id.input_login);
-                input_login.setOnClickListener(this);
+        input_login.setOnClickListener(this);
 
-        input_password  = (EditText) getActivity().findViewById(R.id.input_password);
+        input_password = (EditText) getActivity().findViewById(R.id.input_password);
         input_password.setOnClickListener(this);
+
+        img_entry = (ImageView) getActivity().findViewById(R.id.img_entry);
+        img_entry.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View view) {
-        if (!input_name.getText().toString().equals("") & !input_login.getText().toString().equals("") & !input_password.getText().toString().equals("")  ) {
+        if (view.getId() == btn_acc.getId()){
 
-                    Bundle bundle = new Bundle();
-
-                    bundle.putString("nameUser" , input_name.getText().toString());
-                    bundle.putString("nameEmail" , input_login.getText().toString());
-
-
-                    Navigation.findNavController(view).navigate(R.id.reservation,bundle);
-                Toast.makeText(getContext(), bienvenida + " " + input_name.getText(), Toast.LENGTH_LONG).show();
+            // Toast.makeText(getContext() , inp_name.getText(),Toast.LENGTH_LONG).show();
+            Navigation.findNavController(view).navigate(R.id.accaunt,bundle);
+        } else if (view.getId() == img_entry.getId()){
+            Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
-         else {
-            input_name.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
-            input_password.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
-            input_login.setBackgroundTintList(ColorStateList.valueOf(Color.RED));
-            Toast.makeText(getContext(), Errorinicio, Toast.LENGTH_SHORT).show();
-        }
+
     }
-
-
-
-
 }

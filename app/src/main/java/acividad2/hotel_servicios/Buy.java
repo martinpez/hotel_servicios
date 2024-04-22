@@ -72,7 +72,7 @@ public class Buy extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tablet_layout, container, false);
+        return inflater.inflate(R.layout.buy, container, false);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class Buy extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == btn_tablet.getId()){
-            Navigation.findNavController(view).navigate(R.id.home2);
+            Navigation.findNavController(view).navigate(R.id.login);
         } else if (view.getId() == Button_back.getId()) {
             Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
