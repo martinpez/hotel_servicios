@@ -166,7 +166,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="0dp"
                 android:background="@drawable/spinner_backg"
-                android:entries="@array/phone_identifiers_array" />
+                android:entries="@array/phone_identifiers_array"
+                android:popupBackground="@color/base" />
 
             <EditText
                 android:id="@+id/input_phone"
