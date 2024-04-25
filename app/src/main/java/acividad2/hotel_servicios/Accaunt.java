@@ -90,20 +90,16 @@ public class Accaunt extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         // EDIT TEXT
-        input_login = (EditText) getActivity().findViewById(R.id.input_login);
-        input_login.setOnClickListener(this);
+        input_login = (EditText) getActivity().findViewById(R.id.input_login2);
 
         input_phone = (EditText) getActivity().findViewById(R.id.input_phone);
-        input_phone.setOnClickListener(this);
 
         input_password = (EditText) getActivity().findViewById(R.id.input_phone);
-        input_password.setOnClickListener(this);
 
         input_id = (EditText) getActivity().findViewById(R.id.input_phone);
-        input_id.setOnClickListener(this);
+
 
         input_name = (EditText) getActivity().findViewById(R.id.input_name);
-        input_name.setOnClickListener(this);
 
         // IMAGE VIEW
 
@@ -125,12 +121,12 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
         int id_2 = Integer.parseInt(id);
         int phone = Integer.parseInt(telephone);
-        Cursor cursor2 = db.getHuespedByUser( .getText().toString() );
-        if (!cursor2.moveToNext()){
-            Huesped datos = new Huesped(nombre,id_2,email,password);
-            Telefono datos2 = new Telefono(id_2,phone);
-            db.saveHuesped( datos,datos2 );{
-            }
+        Cursor cursor2 = db.getHuespedByUser(email,password);
+        if (!cursor2.moveToNext()) {
+
+            Huesped datos = new Huesped(nombre, id_2, email, password);
+            Telefono datos2 = new Telefono(id_2, phone);
+                        db.saveHuesped(datos, datos2);
 
         /*if (view.getId() == img_entry_acc.getId()){
             Huesped datos = new Huesped(nombre,id_2,email,password);
@@ -139,7 +135,7 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
             Navigation.findNavController(view).navigate(R.id.login);
         }*/
-
+        }
     }
 
 }

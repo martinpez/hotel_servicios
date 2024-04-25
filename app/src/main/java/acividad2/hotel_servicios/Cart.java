@@ -85,6 +85,9 @@ public class Cart extends Fragment  {
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
 
+
+
+
         // IMAGESBUTTON
         image_Button_User = getActivity().findViewById(R.id.image_Button_User);
 
@@ -121,7 +124,7 @@ public class Cart extends Fragment  {
         rad_room.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean ischek) {
-                //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
+                //  revisa que el checkbox esta CHEQUIADO y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
                     bundle.putString("pice1", price_1.getText().toString());
