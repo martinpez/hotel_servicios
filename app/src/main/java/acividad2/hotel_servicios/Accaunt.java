@@ -1,5 +1,6 @@
 package acividad2.hotel_servicios;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import acividad2.hotel_servicios.data.HotelDBHelper;
+import acividad2.hotel_servicios.data.Huesped;
+import acividad2.hotel_servicios.data.Telefono;
+import acividad2.hotel_servicios.data.HuespedContract.HuespedEntry;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Accaunt#newInstance} factory method to
@@ -21,7 +27,7 @@ import android.widget.ImageView;
  */
 public class Accaunt extends Fragment implements View.OnClickListener {
 
-
+    private HotelDBHelper db;
     private ImageView img_entry_acc;
 
     private EditText input_login , input_phone ,input_password , input_id ,input_name;
@@ -104,15 +110,35 @@ public class Accaunt extends Fragment implements View.OnClickListener {
         img_entry_acc = (ImageView) getActivity().findViewById(R.id.img_entry_acc);
         img_entry_acc.setOnClickListener(this);
 
-
-
+        db = new HotelDBHelper(getContext());
     }
 
     @Override
-    public void onClick(View view) {
-        if (view.getId() == img_entry_acc.getId()){
-            Navigation.findNavController(view).navigate(R.id.login,bundle);
-        }
+    public void onClick(View view){
+
+        //GUARDAR LOS EDITTEXT EN UN STRING
+        String nombre = input_name.getText().toString();
+        String email = input_login.getText().toString();
+        String id = input_id.getText().toString();
+        String telephone = input_phone.getText().toString();
+        String password = input_password.getText().toString();
+
+        int id_2 = Integer.parseInt(id);
+        int phone = Integer.parseInt(telephone);
+        Cursor cursor2 = db.getHuespedByUser( .getText().toString() );
+        if (!cursor2.moveToNext()){
+            Huesped datos = new Huesped(nombre,id_2,email,password);
+            Telefono datos2 = new Telefono(id_2,phone);
+            db.saveHuesped( datos,datos2 );{
+            }
+
+        /*if (view.getId() == img_entry_acc.getId()){
+            Huesped datos = new Huesped(nombre,id_2,email,password);
+            Telefono datos2 = new Telefono(id_2,phone);
+            db.saveHuesped(datos,datos2);
+
+            Navigation.findNavController(view).navigate(R.id.login);
+        }*/
 
     }
 
