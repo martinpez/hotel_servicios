@@ -123,7 +123,7 @@ public class Login extends Fragment implements View.OnClickListener {
             Navigation.findNavController(view).navigate(R.id.accaunt);
 
         }else {
-            Toast.makeText(getContext(),"Credenciales invalidad",Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"Credenciales invalidas",Toast.LENGTH_LONG).show();
         }
 
     }
