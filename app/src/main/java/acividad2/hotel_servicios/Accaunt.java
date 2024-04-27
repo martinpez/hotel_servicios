@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import acividad2.hotel_servicios.data.HotelDBHelper;
 import acividad2.hotel_servicios.data.Huesped;
@@ -127,7 +128,6 @@ public class Accaunt extends Fragment implements View.OnClickListener {
             Huesped datos = new Huesped(nombre, id_2, email, password);
             Telefono datos2 = new Telefono(id_2, phone);
                         db.saveHuesped(datos, datos2);
-
         /*if (view.getId() == img_entry_acc.getId()){
             Huesped datos = new Huesped(nombre,id_2,email,password);
             Telefono datos2 = new Telefono(id_2,phone);
@@ -135,7 +135,10 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
             Navigation.findNavController(view).navigate(R.id.login);
         }*/
+            Toast.makeText(getContext(),"Se registro exitosamente",Toast.LENGTH_LONG).show();
         }
+        Navigation.findNavController(view).navigate(R.id.login);
+
     }
 
 }
