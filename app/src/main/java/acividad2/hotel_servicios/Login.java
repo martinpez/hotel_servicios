@@ -93,10 +93,8 @@ public class Login extends Fragment implements View.OnClickListener {
         btn_acc.setOnClickListener(this);
 
         input_login = (EditText) getActivity().findViewById(R.id.input_login);
-        input_login.setOnClickListener(this);
 
         input_password = (EditText) getActivity().findViewById(R.id.input_password);
-        input_password.setOnClickListener(this);
 
         img_entry = (ImageView) getActivity().findViewById(R.id.img_entry);
         img_entry.setOnClickListener(this);
