@@ -88,7 +88,7 @@ public class Login extends Fragment {
         return inflater.inflate(R.layout.login, container, false);
     }
 
-    Bundle bundle = new Bundle();
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
