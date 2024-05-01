@@ -32,7 +32,7 @@ public class HotelDBHelper extends SQLiteOpenHelper {
                 "UNIQUE ("+ HuespedEntry.col_email + "), UNIQUE (" + HuespedEntry.col_id + "))");
 
         db.execSQL(" CREATE TABLE " + TelefonoEntry.TABLE_NAME + "(" +
-                HuespedEntry.col_id + " TEXT NOT NULL, " +
+                HuespedEntry.col_id + " INTEGER NOT NULL, " +
                 TelefonoEntry.col_telefono + " NUMERIC(12,0) NOT NULL, " +
                 "PRIMARY KEY ("+ HuespedEntry.col_id + ", " + TelefonoEntry.col_telefono + ")," +
                 " FOREIGN KEY (" + HuespedEntry.col_id + ") " +

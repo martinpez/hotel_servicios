@@ -1,8 +1,9 @@
 package acividad2.hotel_servicios;
 
-import android.content.res.ColorStateList;
+
 import android.database.Cursor;
-import android.graphics.Color;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,8 +17,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 import acividad2.hotel_servicios.data.HotelDBHelper;
 import acividad2.hotel_servicios.data.Huesped;
@@ -27,12 +29,14 @@ import acividad2.hotel_servicios.data.Huesped;
  * Use the {@link Login#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Login extends Fragment implements View.OnClickListener {
+public class Login extends Fragment {
+
+
     private HotelDBHelper db;
-     private Button btn_acc;
-     private EditText input_login;
-     private EditText input_password;
-     private ImageView img_entry;
+    private Button btn_acc;
+    private EditText login_password, login_email;
+    private ImageView img_entry;
+
 
     private String Errorinicio = "Fill fields";
     private String bienvenida = "Welcome";
@@ -83,48 +87,75 @@ public class Login extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.login, container, false);
     }
+
     Bundle bundle = new Bundle();
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        btn_acc = (Button) getActivity().findViewById(R.id.btn_acc);
-        btn_acc.setOnClickListener(this);
+        db = new HotelDBHelper(getContext());
 
-        input_login = (EditText) getActivity().findViewById(R.id.input_login);
-        input_login.setOnClickListener(this);
+        btn_acc = (Button) view.findViewById(R.id.btn_acc);
+        btn_acc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == btn_acc.getId()) {
+                    Navigation.findNavController(view).navigate(R.id.accaunt);
+                }
+            }
+        });
 
-        input_password = (EditText) getActivity().findViewById(R.id.input_password);
-        input_password.setOnClickListener(this);
+        login_email = (EditText) getActivity().findViewById(R.id.login_email);
+
+
+        login_password = (EditText) getActivity().findViewById(R.id.input_password);
+
 
         img_entry = (ImageView) getActivity().findViewById(R.id.img_entry);
-        img_entry.setOnClickListener(this);
+        img_entry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                // convertimos en String
 
-        db = new HotelDBHelper(getContext());
-    }
+                String email = login_email.getText().toString();
+                String password = login_password.getText().toString();
 
-    @Override
-    public void onClick(View view) {
-        String email = input_login.getText().toString();
-        String password = input_password.getText().toString();
+                Cursor cursor = db.getHuespedByUser(email, password);
 
-        Cursor cursor = db.getHuespedByUser(email, password);
-        if (cursor.moveToNext()){
-            Huesped hps = new Huesped(cursor);
-            if (view.getId() == img_entry.getId()){
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("UserNme" , hps.getName());
-                Navigation.findNavController( view ).navigate( R.id.cart,bundle1);
+
+
+            /*    if (login_email.getText().toString().isEmpty()  && login_password.getText().toString().isEmpty()) {
+                    login_email.setError("Empty field");
+                    login_password.setError("Empty field");
+
+                    Toast.makeText(getContext(), "If you don't have an account yet, create one", Toast.LENGTH_LONG).show();
+                } else */if (cursor.moveToNext()) {
+                    Huesped hps = new Huesped(cursor);
+
+                    bundle.putString("name", hps.getName());
+
+                    Navigation.findNavController(view).navigate(R.id.cart, bundle);
+
+                } else {
+                    Navigation.findNavController(view).navigate(R.id.login);
+                    Toast.makeText(getContext(), "Credenciales invalidas", Toast.LENGTH_LONG).show();
+                }
 
             }
-        }else
-            if (view.getId() == btn_acc.getId()) {
-            Navigation.findNavController(view).navigate(R.id.accaunt);
 
-        }else {
-            Toast.makeText(getContext(),"Credenciales invalidas",Toast.LENGTH_LONG).show();
-        }
+
+
+
+
+
+
+        });
+
+
+
 
     }
+
 }

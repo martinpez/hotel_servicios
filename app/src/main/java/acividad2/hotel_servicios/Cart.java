@@ -88,6 +88,7 @@ public class Cart extends Fragment  {
 
 
 
+
         // IMAGESBUTTON
         image_Button_User = getActivity().findViewById(R.id.image_Button_User);
 
@@ -114,8 +115,8 @@ public class Cart extends Fragment  {
         rad_room= (CheckBox) getActivity().findViewById(R.id.rad_room);
         rad_mass = (CheckBox) getActivity().findViewById(R.id.rad_mass);
 
-        // Bundle Resividos
-      //  txt_nombre_fit.setText(getArguments().getString("nombre"));
+        // INSERTS DE TODOS LOS BUNBLE DE CART
+        txt_nombre_fit.setText(getArguments().getString("name"));
 
         // LOGICA DE LOS CHECK BOX
 

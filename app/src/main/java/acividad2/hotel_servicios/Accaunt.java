@@ -11,7 +11,6 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,7 +18,6 @@ import android.widget.Toast;
 import acividad2.hotel_servicios.data.HotelDBHelper;
 import acividad2.hotel_servicios.data.Huesped;
 import acividad2.hotel_servicios.data.Telefono;
-import acividad2.hotel_servicios.data.HuespedContract.HuespedEntry;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +29,7 @@ public class Accaunt extends Fragment implements View.OnClickListener {
     private HotelDBHelper db;
     private ImageView img_entry_acc;
 
-    private EditText input_login , input_phone ,input_password , input_id ,input_name;
+    private EditText input_email , input_phone ,input_password , input_id ,input_name;
 
 
 
@@ -91,15 +89,10 @@ public class Accaunt extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         // EDIT TEXT
-        input_login = (EditText) getActivity().findViewById(R.id.input_login2);
-
+        input_email = (EditText) getActivity().findViewById(R.id.input_email);
         input_phone = (EditText) getActivity().findViewById(R.id.input_phone);
-
-        input_password = (EditText) getActivity().findViewById(R.id.input_phone);
-
-        input_id = (EditText) getActivity().findViewById(R.id.input_phone);
-
-
+        input_password = (EditText) getActivity().findViewById(R.id.input_password);
+        input_id = (EditText) getActivity().findViewById(R.id.input_id);
         input_name = (EditText) getActivity().findViewById(R.id.input_name);
 
         // IMAGE VIEW
@@ -115,16 +108,17 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
         //GUARDAR LOS EDITTEXT EN UN STRING
         String nombre = input_name.getText().toString();
-        String email = input_login.getText().toString();
         String id = input_id.getText().toString();
+        String email = input_email.getText().toString();
         String telephone = input_phone.getText().toString();
         String password = input_password.getText().toString();
 
         int id_2 = Integer.parseInt(id);
         int phone = Integer.parseInt(telephone);
+
         Cursor cursor2 = db.getHuespedByUser(email,password);
         if (!cursor2.moveToNext()) {
-
+            System.out.println("name" +  input_name.getText());
             Huesped datos = new Huesped(nombre, id_2, email, password);
             Telefono datos2 = new Telefono(id_2, phone);
                         db.saveHuesped(datos, datos2);

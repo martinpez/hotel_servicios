@@ -15,7 +15,7 @@
         <!-- Tu contenido actual aquí -->
 
         <EditText
-            android:id="@+id/input_login"
+            android:id="@+id/login_email"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/login_password"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -70,14 +70,14 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textEmailAddress"
+            android:inputType="text|textPassword"
             android:textColor="@color/black"
             android:textColorHint="#3B608C"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_login" />
+            app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
         <ImageView
             android:id="@+id/img_entry"
@@ -86,7 +86,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="36dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_password"
+            app:layout_constraintTop_toBottomOf="@+id/login_password"
             app:srcCompat="@drawable/btn_arraw1" />
 
         <LinearLayout
