@@ -14,7 +14,7 @@
 
 
         <EditText
-            android:id="@+id/input_name"
+            android:id="@+id/input_name_ac"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -25,7 +25,7 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="Name"
-            android:inputType="text|textPersonName"
+            android:inputType="textEmailAddress"
             android:textColor="@color/black"
             android:textColorHint="#3B608C"
             android:textSize="18sp"
@@ -36,7 +36,7 @@
 
 
         <EditText
-            android:id="@+id/input_email"
+            android:id="@+id/email_ac"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -54,10 +54,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_id" />
+            app:layout_constraintTop_toBottomOf="@+id/input_id_ac" />
 
         <EditText
-            android:id="@+id/input_id"
+            android:id="@+id/input_id_ac"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -68,14 +68,14 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="ID"
-            android:inputType="number"
+            android:inputType="textEmailAddress"
             android:textColor="@color/black"
             android:textColorHint="#3B608C"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_name" />
+            app:layout_constraintTop_toBottomOf="@+id/input_name_ac" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -99,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
         <EditText
-            android:id="@+id/input_password"
+            android:id="@+id/input_password_ac"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -126,7 +126,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="36dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_password"
+            app:layout_constraintTop_toBottomOf="@+id/input_password_ac"
             app:srcCompat="@drawable/btn_arrow2" />
 
 
@@ -158,7 +158,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_email">
+            app:layout_constraintTop_toBottomOf="@+id/email_ac">
 
             <Spinner
                 android:id="@+id/spinner_num"
@@ -170,7 +170,7 @@
                 android:popupBackground="@color/base" />
 
             <EditText
-                android:id="@+id/input_phone"
+                android:id="@+id/input_phone_ac"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginStart="32dp"
