@@ -77,7 +77,6 @@ public class HotelDBHelper extends SQLiteOpenHelper {
 
     public long saveHuesped(Huesped huesped, Telefono telefono) {
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
-        System.out.println(telefono.toContentValues().toString());
         sqLiteDatabase.insert(
                 HuespedEntry.TABLE_NAME,
                 null,

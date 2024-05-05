@@ -7,13 +7,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-
+import android.widget.Spinner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import acividad2.hotel_servicios.data.HotelDBHelper;
@@ -29,10 +28,8 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
     private HotelDBHelper db;
     private ImageView img_entry_acc;
-
-    private EditText input_login , input_phone ,input_password , input_id ,input_name;
-
-    private Spinner input_ind;
+    private Spinner spinner_num;
+    private EditText input_name , input_id , input_email , input_phone ,input_password ;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -74,8 +71,6 @@ public class Accaunt extends Fragment implements View.OnClickListener {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-
-
     }
 
     @Override
@@ -90,19 +85,16 @@ public class Accaunt extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         // EDIT TEXT
-        input_login = (EditText) getActivity().findViewById(R.id.email_ac);
+        input_email = (EditText) getActivity().findViewById(R.id.input_email);
+        input_phone = (EditText) getActivity().findViewById(R.id.input_phone);
+        input_password = (EditText) getActivity().findViewById(R.id.input_password);
+        input_id = (EditText) getActivity().findViewById(R.id.input_id);
+        input_name = (EditText) getActivity().findViewById(R.id.input_name);
 
-        input_phone = (EditText) getActivity().findViewById(R.id.input_phone_ac);
-        input_ind = (Spinner) getActivity().findViewById(R.id.spinner_num);
-        input_password = (EditText) getActivity().findViewById(R.id.input_password_ac);
-
-        input_id = (EditText) getActivity().findViewById(R.id.input_id_ac);
-
-
-        input_name = (EditText) getActivity().findViewById(R.id.input_name_ac);
+        // SPINNER
+        spinner_num = (Spinner) getActivity().findViewById(R.id.spinner_num);
 
         // IMAGE VIEW
-
         img_entry_acc = (ImageView) getActivity().findViewById(R.id.img_entry_acc);
         img_entry_acc.setOnClickListener(this);
 
@@ -114,25 +106,20 @@ public class Accaunt extends Fragment implements View.OnClickListener {
 
         //GUARDAR LOS EDITTEXT EN UN STRING
         String nombre = input_name.getText().toString();
-        String email = input_login.getText().toString();
         String id = input_id.getText().toString();
-        String telephone = input_ind.getSelectedItem().toString()+input_phone.getText().toString();
+        String email = input_email.getText().toString();
+        String telephone = spinner_num.getSelectedItem().toString()+input_phone.getText().toString();
         String password = input_password.getText().toString();
 
         int id_2 = Integer.parseInt(id);
+
         Cursor cursor2 = db.getHuespedByUser(email,password);
         if (!cursor2.moveToNext()) {
-
+            System.out.println("name" +  input_name.getText());
             Huesped datos = new Huesped(nombre, id_2, email, password);
             Telefono datos2 = new Telefono(id_2, telephone);
                         db.saveHuesped(datos, datos2);
-        /*if (view.getId() == img_entry_acc.getId()){
-            Huesped datos = new Huesped(nombre,id_2,email,password);
-            Telefono datos2 = new Telefono(id_2,phone);
-            db.saveHuesped(datos,datos2);
 
-            Navigation.findNavController(view).navigate(R.id.login);
-        }*/
             Toast.makeText(getContext(),"Se registro exitosamente",Toast.LENGTH_LONG).show();
         }
         Navigation.findNavController(view).navigate(R.id.login);

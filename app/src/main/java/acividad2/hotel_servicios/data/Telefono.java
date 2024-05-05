@@ -22,15 +22,17 @@ public class Telefono {
     }
 
     public Telefono(Cursor cursor){
-        this.id_huesped = Integer.parseInt(cursor.getString( cursor.getColumnIndex( HuespedEntry.col_id ) ));
-        this.telefono_husped = cursor.getString( cursor.getColumnIndex( TelefonoEntry.col_telefono ) );
+        this.id_huesped = Integer.parseInt(cursor.getString( cursor.getColumnIndex( HuespedEntry.col_id)));
+        this.telefono_husped = (String) cursor.getString( cursor.getColumnIndex( TelefonoEntry.col_telefono ) );
     }
 
     public int getId_huesped() {
+
         return id_huesped;
     }
 
     public String getTelefono_husped() {
+
         return telefono_husped;
     }
 
