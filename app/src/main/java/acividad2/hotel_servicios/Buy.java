@@ -24,7 +24,7 @@ public class Buy extends Fragment implements View.OnClickListener {
     private Button btn_tablet;
     private ImageButton Button_back;
 
-    private TextView txt_total, txt_precio_one_buy,txt_precio_2_buy,txt_precio_3_buy,txt_precio_4_buy,txt_precio_5_buy,txt_precio_6_buy,txt_precio_7_buy,txt_precio_8_buy,txt_precio_9_buy,txt_precio_10_buy;
+    private TextView  txt_precio_one_buy,txt_precio_2_buy,txt_precio_3_buy,txt_precio_4_buy,txt_precio_5_buy,txt_precio_6_buy,txt_precio_7_buy,txt_precio_8_buy,txt_precio_9_buy,txt_precio_10_buy;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +36,9 @@ public class Buy extends Fragment implements View.OnClickListener {
     private String mParam2;
 
     private int suma_total;
+
+    private String nombre_user ;
+
 
     public Buy() {
         // Required empty public constructor
@@ -88,7 +91,7 @@ public class Buy extends Fragment implements View.OnClickListener {
         Button_back.setOnClickListener(this);
         btn_tablet.setOnClickListener(this);
         // ALL TEXTVIEW
-        txt_total = (TextView) getActivity().findViewById(R.id.txt_total);
+
         txt_precio_3_buy = (TextView) getActivity().findViewById(R.id.txt_precio_3_buy);
         txt_precio_one_buy= (TextView) getActivity().findViewById(R.id.txt_precio_one_buy);
         txt_precio_2_buy= (TextView) getActivity().findViewById(R.id.txt_precio_2_buy);
@@ -113,16 +116,18 @@ public class Buy extends Fragment implements View.OnClickListener {
         txt_precio_9_buy.setText(getArguments().getString("pice6"));
         txt_precio_10_buy.setText(getArguments().getString("pice1"));
 
-        int precio_1 = Integer.parseInt(txt_precio_3_buy.getText().toString());
 
+        nombre_user = getArguments().getString("name_acc");
+        bundle.putString("name" , getArguments().getString("name_acc"));
 
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == btn_tablet.getId()){
-            Navigation.findNavController(view).navigate(R.id.login);
+            Navigation.findNavController(view).navigate(R.id.login,bundle);
         } else if (view.getId() == Button_back.getId()) {
+
             Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
     }

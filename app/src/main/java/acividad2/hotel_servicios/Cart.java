@@ -40,10 +40,8 @@ public class Cart extends Fragment  {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String nombre_use;
 
-    public Cart() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -85,10 +83,6 @@ public class Cart extends Fragment  {
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
 
-
-
-
-
         // IMAGESBUTTON
         image_Button_User = getActivity().findViewById(R.id.image_Button_User);
 
@@ -116,7 +110,10 @@ public class Cart extends Fragment  {
         rad_mass = (CheckBox) getActivity().findViewById(R.id.rad_mass);
 
         // INSERTS DE TODOS LOS BUNBLE DE CART
-        txt_nombre_fit.setText(getArguments().getString("name"));
+        nombre_use =  getArguments().getString("name");
+        txt_nombre_fit.setText(nombre_use);
+        bundle.putString("name_acc" ,getArguments().getString("name"));
+
 
         // LOGICA DE LOS CHECK BOX
 

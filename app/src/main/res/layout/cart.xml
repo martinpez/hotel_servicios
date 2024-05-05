@@ -60,17 +60,19 @@
 
                 <TextView
                     android:id="@+id/txt_nombre_fit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="219dp"
+                    android:layout_height="82dp"
                     android:layout_marginStart="32dp"
-                    android:text=""
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
                     android:textColor="@color/white"
                     android:textSize="32dp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/image_Button_User"
+                    app:layout_constraintEnd_toStartOf="@+id/image_Button_User"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintVertical_bias="0.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
