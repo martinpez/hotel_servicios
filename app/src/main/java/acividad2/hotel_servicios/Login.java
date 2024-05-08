@@ -123,6 +123,8 @@ public class Login extends Fragment implements View.OnClickListener {
         } else if (view.getId() == btn_acc.getId()){
             Navigation.findNavController(view).navigate(R.id.accaunt);
         }else{
+            login_email.setError("Empty fields");
+            login_password.setError("Empty fields");
             Toast.makeText(getContext(),"Credenciales invalidas",Toast.LENGTH_LONG).show();
         }
 
