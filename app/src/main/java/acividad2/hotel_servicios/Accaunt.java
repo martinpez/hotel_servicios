@@ -142,7 +142,6 @@ public class Accaunt extends Fragment implements View.OnClickListener {
             e.printStackTrace();
         }
 
-
     }
         /*try {
             // GUARDAR LOS EDITTEXT EN UN STRING
