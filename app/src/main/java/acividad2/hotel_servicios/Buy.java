@@ -158,7 +158,7 @@ public class Buy extends Fragment implements View.OnClickListener {
         public static double sumarPrecios(double precio1, double precio2 , double precio3 , double precio4 , double precio5 , double precio6, double precio7 ) {
                 double suma  = precio1 + precio2 + precio3 + precio4 + precio5 + precio6 + precio7;
 
-            return suma  ;
+            return suma;
         }
     }
 
