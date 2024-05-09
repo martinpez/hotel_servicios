@@ -11,7 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -22,9 +22,9 @@ import android.widget.TextView;
 public class Buy extends Fragment implements View.OnClickListener {
 
     private Button btn_tablet;
-    private ImageButton Button_back;
+    private ImageView button_back;
 
-    private TextView  txt_precio_one_buy,txt_precio_2_buy,txt_precio_3_buy,txt_precio_4_buy,txt_precio_5_buy,txt_precio_6_buy,txt_precio_7_buy,txt_precio_8_buy,txt_precio_9_buy,txt_precio_10_buy;
+    private TextView  txt_discount,txt_iva,txt_totalsum,txt_subtotal,txt_fit,txt_precio_3_buy,txt_precio_4_buy,txt_precio_6_buy,txt_precio_7_buy,txt_precio_8_buy,txt_precio_9_buy,txt_precio_10_buy;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -86,47 +86,89 @@ public class Buy extends Fragment implements View.OnClickListener {
 
             // ALL BUTTON
         btn_tablet  = (Button) getActivity().findViewById(R.id.btn_add);
-        Button_back= (ImageButton) getActivity().findViewById(R.id.Button_back);
+        button_back= (ImageView) getActivity().findViewById(R.id.button_back);
         // ALL BUTTON this for implements
-        Button_back.setOnClickListener(this);
+        button_back.setOnClickListener(this);
         btn_tablet.setOnClickListener(this);
         // ALL TEXTVIEW
 
         txt_precio_3_buy = (TextView) getActivity().findViewById(R.id.txt_precio_3_buy);
-        txt_precio_one_buy= (TextView) getActivity().findViewById(R.id.txt_precio_one_buy);
-        txt_precio_2_buy= (TextView) getActivity().findViewById(R.id.txt_precio_2_buy);
         txt_precio_4_buy= (TextView) getActivity().findViewById(R.id.txt_precio_4_buy);
-        txt_precio_5_buy= (TextView) getActivity().findViewById(R.id.txt_precio_5_buy);
         txt_precio_6_buy= (TextView) getActivity().findViewById(R.id.txt_precio_6_buy);
         txt_precio_7_buy= (TextView) getActivity().findViewById(R.id.txt_precio_7_buy);
         txt_precio_8_buy= (TextView) getActivity().findViewById(R.id.txt_precio_8_buy);
         txt_precio_9_buy= (TextView) getActivity().findViewById(R.id.txt_precio_9_buy);
         txt_precio_10_buy= (TextView) getActivity().findViewById(R.id.txt_precio_10_buy);
+        txt_fit = (TextView)  getActivity().findViewById(R.id.txt_fit);
 
+        txt_discount = (TextView) getActivity().findViewById(R.id.txt_precio_10_buy);
+        txt_iva= (TextView) getActivity().findViewById(R.id.txt_iva);
+        txt_totalsum= (TextView) getActivity().findViewById(R.id.txt_totalsum);
+        txt_subtotal= (TextView) getActivity().findViewById(R.id.txt_subtotal);
         // INSERTS DE TODOS LOS BUNBLE DE CART
 
-        txt_precio_one_buy.setText(getArguments().getString(""));
-        txt_precio_2_buy.setText(getArguments().getString(""));
-        txt_precio_3_buy.setText(getArguments().getString("pice7"));
-        txt_precio_4_buy.setText(getArguments().getString("pice2"));
-        txt_precio_5_buy.setText(getArguments().getString(""));
-        txt_precio_6_buy.setText(getArguments().getString("pice5"));
-        txt_precio_7_buy.setText(getArguments().getString("pice3"));
-        txt_precio_8_buy.setText(getArguments().getString("pice4"));
-        txt_precio_9_buy.setText(getArguments().getString("pice6"));
-        txt_precio_10_buy.setText(getArguments().getString("pice1"));
-
+        txt_fit.setText( getArguments().getString("name_acc"));
+        txt_precio_3_buy.setText("$ " +getArguments().getString( "pice7"));
+        txt_precio_4_buy.setText("$ " +getArguments().getString("pice2"));
+        txt_precio_6_buy.setText("$ " +getArguments().getString("pice5"));
+        txt_precio_7_buy.setText("$ " +getArguments().getString("pice3"));
+        txt_precio_8_buy.setText("$ " +getArguments().getString("pice4"));
+        txt_precio_9_buy.setText("$ " +getArguments().getString("pice6"));
+        txt_precio_10_buy.setText("$ " +getArguments().getString("pice1"));
 
         nombre_user = getArguments().getString("name_acc");
         bundle.putString("name" , getArguments().getString("name_acc"));
 
+
+        // Obtiene el texto de los TextViews y los convierte a números
+        String precioTexto1 = txt_precio_3_buy.getText().toString();
+        String precioTexto2 = txt_precio_4_buy.getText().toString();
+
+        String precioTexto3 = txt_precio_6_buy.getText().toString();
+        String precioTexto4 = txt_precio_7_buy.getText().toString();
+        String precioTexto5 = txt_precio_8_buy.getText().toString();
+        String precioTexto6 = txt_precio_9_buy.getText().toString();
+        String precioTexto7 = txt_precio_10_buy.getText().toString();
+
+
+
+        if (!precioTexto1.isEmpty() && !precioTexto2.isEmpty() && !precioTexto3.isEmpty() &&
+                !precioTexto4.isEmpty() && !precioTexto5.isEmpty() && !precioTexto6.isEmpty() && !precioTexto7.isEmpty())  {
+            double precio1 = Double.parseDouble(precioTexto1.replace("$ ", ""));
+            double precio2 = Double.parseDouble(precioTexto2.replace("$ ", ""));
+            double precio3 = Double.parseDouble(precioTexto3.replace("$ ", ""));
+            double precio4 = Double.parseDouble(precioTexto4.replace("$ ", ""));
+            double precio5 = Double.parseDouble(precioTexto5.replace("$ ", ""));
+            double precio6 = Double.parseDouble(precioTexto6.replace("$ ", ""));
+            double precio7 = Double.parseDouble(precioTexto7.replace("$ ", ""));
+
+
+            // Suma los precios utilizando la clase CalculadoraPrecio
+            double total = CalculadoraPrecio.sumarPrecios(precio1, precio2 , precio3, precio4, precio5, precio6, precio7);
+
+            txt_subtotal.setText("$ " + total);
+        } else {
+            // Manejar caso donde al menos uno de los precios está vacío
+            // Por ejemplo, mostrar un mensaje de error o tomar alguna acción adecuada
+        }
+
     }
+
+    public static class CalculadoraPrecio {
+        public static double sumarPrecios(double precio1, double precio2 , double precio3 , double precio4 , double precio5 , double precio6, double precio7 ) {
+                double suma  = precio1 + precio2 + precio3 + precio4 + precio5 + precio6 + precio7;
+
+            return suma  ;
+        }
+    }
+
+
 
     @Override
     public void onClick(View view) {
         if (view.getId() == btn_tablet.getId()){
             Navigation.findNavController(view).navigate(R.id.login,bundle);
-        } else if (view.getId() == Button_back.getId()) {
+        } else if (view.getId() == button_back.getId()) {
 
             Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }

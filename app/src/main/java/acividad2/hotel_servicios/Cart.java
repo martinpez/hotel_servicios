@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
@@ -28,7 +27,7 @@ public class Cart extends Fragment  {
     //variables privasdas
     private Button btn_add;
     private TextView txt_nombre_fit, price_1, price_2, price_3, price_4, price_5, price_6, price_7;
-    private CheckBox rad_mas, rad_recre, rad_special, rad_vip, rad_gift, rad_room,rad_mass;
+    private CheckBox rad_gui, rad_recre, rad_special, rad_vip, rad_gift, rad_room,rad_mass;
     private ImageView image_Button_User;
 
 
@@ -101,7 +100,7 @@ public class Cart extends Fragment  {
         btn_add = (Button) getActivity().findViewById(R.id.btn_add);
 
         // ALL CHECKBOX
-        rad_mas = (CheckBox) getActivity().findViewById(R.id.rad_mas);
+        rad_gui = (CheckBox) getActivity().findViewById(R.id.rad_gui);
         rad_recre = (CheckBox) getActivity().findViewById(R.id.rad_recre);
         rad_special= (CheckBox) getActivity().findViewById(R.id.rad_special);
         rad_vip= (CheckBox) getActivity().findViewById(R.id.rad_vip);
@@ -132,7 +131,7 @@ public class Cart extends Fragment  {
             }
         });
 
-        rad_mas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        rad_gui.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean ischek) {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto

@@ -1,324 +1,544 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    android:paddingTop="20dp"
-    android:stretchColumns="1">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
-    <TableRow
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="40dp">
+        android:background="#FFF4E5E2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/Button_back"
-            android:layout_width="33dp"
-            android:layout_height="31dp"
-            android:layout_gravity="left"
-            android:layout_marginStart="16dp"
-            android:backgroundTint="@color/base"
-            android:src="@drawable/flecha_tabla" />
-
-    </TableRow>
-
-    <TableRow android:background="@color/gray">
-
-        <TextView
-            android:id="@+id/txt_tablet_invo"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/txt_tablet_invo"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_Subt"
-            android:layout_column="2"
-            android:padding="4dip"
-            android:text="@string/txt_Subt"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_day"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/txt_day"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_one_buy"
-            android:layout_height="match_parent"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_stay"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/txt_stay"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_2_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_mass"
-            android:layout_width="150dp"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_one"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_3_buy"
-            android:layout_column="2"
-            android:layout_gravity="left"
-            android:padding="4dip"
-            android:textAlignment="gravity"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_seven"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_4_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="value for kids"
-
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_5_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_recre"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_three"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_6_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_gift"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_five"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_7_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_vip"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_four"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_8_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_two"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_9_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow>
-
-        <TextView
-            android:id="@+id/txt_room"
-            android:layout_column="0"
-            android:padding="3dip"
-            android:text="@string/radio_six"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_precio_10_buy"
-            android:layout_column="2"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/gray">
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/gray"
-            android:text=""
-            android:textColor="@color/cafe" />
-    </TableRow>
+            android:orientation="vertical">
 
-    <TableRow
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/txt_sub"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_sub"
-            android:textColor="@color/cafe" />
+            android:background="@drawable/top_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/top_background" />
 
-        <TextView
-            android:layout_column="1"
-            android:gravity="left"
-            android:padding="4dip"
-            android:text="$ 2.849.00"
-            android:textColor="@color/cafe" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/txt_disc"
+        <ImageView
+            android:id="@+id/image_Button_User"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_disc"
-            android:textColor="@color/cafe" />
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/profile" />
 
         <TextView
-            android:layout_column="1"
-            android:gravity="left"
-            android:padding="4dip"
-            android:text="$300.00"
-            android:textColor="@color/cafe" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/txt_iva"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_iva"
-            android:textColor="@color/cafe" />
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:text="User"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/image_Button_User" />
 
         <TextView
-            android:layout_column="1"
-            android:gravity="left"
-            android:padding="4dip"
-            android:text="$ 200.00"
-            android:textColor="@color/cafe" />
-    </TableRow>
+            android:id="@+id/txt_fit"
+            android:layout_width="219dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/image_Button_User"
+            app:layout_constraintEnd_toStartOf="@+id/image_Button_User"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <TableRow
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/txt_total"
+        <ImageView
+            android:id="@+id/button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txt_total"
-            android:textColor="@color/cafe" />
-
-        <TextView
-            android:id="@+id/txt_total_precio"
-            android:layout_column="1"
-            android:gravity="left"
-            android:padding="4dip"
-            android:textColor="@color/cafe"
-            android:textStyle="bold|italic" />
-
-    </TableRow>
+            android:layout_marginEnd="188dp"
+            android:src="@drawable/back"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_Button_User"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.174"
+            tools:srcCompat="@drawable/back"
+            tools:visibility="visible" />
 
 
-    <Button
-        android:id="@+id/btn_pagar"
-        android:layout_width="50dp"
-        android:layout_height="53dp"
-        android:layout_gravity="center"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="70dp"
-        android:layout_marginBottom="34dp"
-
-        android:backgroundTint="@color/white"
-
-        android:text="@string/btn_tablet"
-        android:textColor="@color/cafe" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="0dp"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="25dp"
+                        android:background="@drawable/white_backg"
+
+                        >
+
+                        <ScrollView
+                            android:id="@+id/scrollView2"
+                            android:layout_width="181dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.26">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/txt_tablet_invo"
+                                    android:textAlignment="gravity"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_rom_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_six"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_guided_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_seven"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_gift_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_five"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_vip_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_four"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_recreation_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_three"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_special_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_two"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_massag_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="29dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="@string/radio_one"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
+                        <ScrollView
+                            android:id="@+id/scrollView3"
+                            android:layout_width="116dp"
+                            android:layout_height="335dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.65"
+                            app:layout_constraintStart_toEndOf="@+id/scrollView2"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:baselineAligned="false"
+                                android:orientation="vertical"
+                                app:layout_constraintVertical_bias="0.0">
+
+                                <TextView
+                                    android:id="@+id/textView11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/txt_Subt"
+                                    android:textAlignment="gravity"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+
+
+                                    />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_3_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_4_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="12dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="29dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_6_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="29dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_7_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="0dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_8_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_9_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_precio_10_buy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="15dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="0dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </ScrollView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="25dp"
+                    android:background="@drawable/white_backg"
+                    android:paddingTop="10dp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_add2"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/button_gren2"
+                        android:text="Reserve"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout3"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/grey_bg"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <EditText
+                            android:id="@+id/editTextText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#00ffffff"
+                            android:ems="10"
+                            android:hint="Entre Your Copun"
+                            android:inputType="text"
+                            android:paddingStart="8dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="#9ca3af"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/button"
+                            style="@android:style/Widget.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="38dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/button_gren"
+                            android:text="Apply"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="339dp"
+                        android:layout_height="157dp"
+                        android:layout_marginTop="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/txt_Subt"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/txt_disc"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="24dp"
+                            android:text="@string/txt_iva"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                        <TextView
+                            android:id="@+id/txt_subtotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="$-"
+                            android:textColor="#059669"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                        <TextView
+                            android:id="@+id/txt_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="$-"
+                            android:textColor="#059669"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+                        <TextView
+                            android:id="@+id/txt_iva"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="$-"
+                            android:textColor="#16a34a"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+                        <View
+                            android:id="@+id/view"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:background="#4b5563"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Total"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                        <TextView
+                            android:id="@+id/txt_totalsum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="$-"
+                            android:textColor="#16a34a"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
