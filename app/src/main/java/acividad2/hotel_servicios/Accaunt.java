@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+import android.widget.Button;
 import android.widget.Spinner;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -66,6 +68,7 @@ public class Accaunt extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -85,45 +88,91 @@ public class Accaunt extends Fragment implements View.OnClickListener {
         super.onViewCreated(view, savedInstanceState);
 
         // EDIT TEXT
-        input_email = (EditText) getActivity().findViewById(R.id.input_email);
-        input_phone = (EditText) getActivity().findViewById(R.id.input_phone);
-        input_password = (EditText) getActivity().findViewById(R.id.input_password);
-        input_id = (EditText) getActivity().findViewById(R.id.input_id);
-        input_name = (EditText) getActivity().findViewById(R.id.input_name);
+        input_email = view.findViewById(R.id.input_email);
+        input_phone = view.findViewById(R.id.input_phone);
+        input_password = view.findViewById(R.id.input_password);
+        input_id = view.findViewById(R.id.input_id);
+        input_name = view.findViewById(R.id.input_name);
 
         // SPINNER
-        spinner_num = (Spinner) getActivity().findViewById(R.id.spinner_num);
+        spinner_num = view.findViewById(R.id.spinner_num);
 
         // IMAGE VIEW
-        img_entry_acc = (ImageView) getActivity().findViewById(R.id.img_entry_acc);
+        img_entry_acc = view.findViewById(R.id.img_entry_acc);
         img_entry_acc.setOnClickListener(this);
 
         db = new HotelDBHelper(getContext());
     }
 
     @Override
-    public void onClick(View view){
+    public void onClick(View view) {
+        try {
+            // GUARDAR LOS EDITTEXT EN UN STRING
+            String nombre = input_name.getText().toString().trim();
+            String id = input_id.getText().toString().trim();
+            int id_2 = Integer.parseInt(id);
 
-        //GUARDAR LOS EDITTEXT EN UN STRING
-        String nombre = input_name.getText().toString();
-        String id = input_id.getText().toString();
-        String email = input_email.getText().toString();
-        String telephone = spinner_num.getSelectedItem().toString()+input_phone.getText().toString();
-        String password = input_password.getText().toString();
+            String email = input_email.getText().toString().trim();
+            String telephone = spinner_num.getSelectedItem().toString() + input_phone.getText().toString().trim();
+            String password = input_password.getText().toString().trim();
 
-        int id_2 = Integer.parseInt(id);
+            // Verify that all fields are not empty
+            if (nombre.isEmpty() || id.isEmpty() || email.isEmpty() || telephone.isEmpty() || password.isEmpty()) {
+                throw new Exception();
+            }
 
-        Cursor cursor2 = db.getHuespedByUser(email,password);
-        if (!cursor2.moveToNext()) {
-            System.out.println("name" +  input_name.getText());
-            Huesped datos = new Huesped(nombre, id_2, email, password);
-            Telefono datos2 = new Telefono(id_2, telephone);
-                        db.saveHuesped(datos, datos2);
-
-            Toast.makeText(getContext(),"Se registro exitosamente",Toast.LENGTH_LONG).show();
+            Cursor cursor2 = db.getHuespedByUser(email, password);
+            if (!cursor2.moveToNext()) {
+                Huesped datos = new Huesped(nombre, id_2, email, password);
+                Telefono datos2 = new Telefono(id_2, telephone);
+                db.saveHuesped(datos, datos2);
+                Toast.makeText(getContext(), "Se registro exitosamente", Toast.LENGTH_LONG).show();
+                Navigation.findNavController(view).navigate(R.id.login);
+            } else {
+                Toast.makeText(getContext(), "Credenciales invalidas.", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            // Set error messages for all EditText fields when any field is empty
+            input_name.setError("Empty fields");
+            input_id.setError("Empty fields");
+            input_name.setError("Empty fields");
+            input_email.setError("Empty fields");
+            input_phone.setError("Empty fields");
+            input_password.setError("Empty fields");
+            e.printStackTrace();
         }
-        Navigation.findNavController(view).navigate(R.id.login);
 
     }
+        /*try {
+            // GUARDAR LOS EDITTEXT EN UN STRING
+            String nombre = input_name.getText().toString().trim();
+            String id = input_id.getText().toString().trim();
+            String email = input_email.getText().toString().trim();
+            String telephone = spinner_num.getSelectedItem().toString() + input_phone.getText().toString().trim();
+            String password = input_password.getText().toString().trim();
+
+            int id_2 = Integer.parseInt(id);
+
+            Cursor cursor2 = db.getHuespedByUser(email, password);
+            if (!cursor2.moveToNext()) {
+                System.out.println("name" + input_name.getText());
+                Huesped datos = new Huesped(nombre, id_2, email, password);
+                Telefono datos2 = new Telefono(id_2, telephone);
+                db.saveHuesped(datos, datos2);
+                Toast.makeText(getContext(), "Se registro exitosamente", Toast.LENGTH_LONG).show();
+                Navigation.findNavController(view).navigate(R.id.login);
+            }
+
+        } catch (Exception e) {
+            input_name.setError("Empty fields");
+            input_id.setError("Empty fields");
+            input_name.setError("Empty fields");
+            input_email.setError("Empty fields");
+            input_phone.setError("Empty fields");
+            input_password.setError("Empty fields");
+            e.printStackTrace();
+            Toast.makeText(getContext(), "Credenciales invalidas.", Toast.LENGTH_LONG).show();
+        }
+    }*/
 
 }

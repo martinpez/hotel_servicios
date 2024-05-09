@@ -105,27 +105,36 @@ public class Login extends Fragment implements View.OnClickListener {
         db = new HotelDBHelper(getContext());
     }
 
+
     @Override
     public void onClick(View view) {
-
-        // String
         String email = login_email.getText().toString();
         String password = login_password.getText().toString();
         Cursor cursor = db.getHuespedByUser(email, password);
 
-        if (cursor.moveToNext()){
-            Huesped hps = new Huesped(cursor);
-            if (view.getId() == img_entry.getId()){
+        if (view.getId() == img_entry.getId()) {
+            if (cursor.moveToNext()){
+                Huesped hps = new Huesped(cursor);
                 Bundle bundle = new Bundle();
                 bundle.putString("name" , hps.getName());
-                Navigation.findNavController( view ).navigate( R.id.cart,bundle);
+                Navigation.findNavController(view).navigate(R.id.cart, bundle);
+            } else {
+                Toast.makeText(getContext(),"Credenciales inválidas",Toast.LENGTH_LONG).show();
             }
-        } else if (view.getId() == btn_acc.getId()){
-            Navigation.findNavController(view).navigate(R.id.accaunt);
-        }else{
-            Toast.makeText(getContext(),"Credenciales invalidas",Toast.LENGTH_LONG).show();
+        } else if (view.getId() == btn_acc.getId()) {
+            if (!email.isEmpty() && !password.isEmpty()) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    Toast.makeText(getContext(), "Iniciando sesión...", Toast.LENGTH_SHORT).show();
+                    // Aquí podrías realizar la lógica de inicio de sesión, si es necesario
+                } else {
+                    // Si los campos no están vacíos pero las credenciales son inválidas, puedes mostrar un mensaje de error
+                    Toast.makeText(getContext(), "Credenciales inválidas", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                // Si los campos están vacíos, navega directamente al fragmento de creación de cuenta
+                Navigation.findNavController(view).navigate(R.id.accaunt);
+            }
         }
-
     }
 
 }
