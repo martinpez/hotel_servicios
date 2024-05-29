@@ -355,7 +355,7 @@
                     android:paddingTop="10dp">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_add2"
+                        android:id="@+id/btn_reservations"
                         style="@android:style/Widget.Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -383,7 +383,7 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                         <EditText
-                            android:id="@+id/editTextText2"
+                            android:id="@+id/edit_discount"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="#00ffffff"
@@ -396,7 +396,7 @@
                             android:textSize="14sp" />
 
                         <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/button"
+                            android:id="@+id/btn_apply_disccount"
                             style="@android:style/Widget.Button"
                             android:layout_width="wrap_content"
                             android:layout_height="38dp"

@@ -126,8 +126,9 @@ public class Accaunt extends Fragment implements View.OnClickListener {
                 Huesped datos = new Huesped(nombre, id_2, email, password);
                 Telefono datos2 = new Telefono(id_2, telephone);
                 db.saveHuesped(datos, datos2);
+                //bundle.putString("Telefono" , input_phone.getText().toString());
                 Toast.makeText(getContext(), "Se registro exitosamente", Toast.LENGTH_LONG).show();
-                Navigation.findNavController(view).navigate(R.id.login);
+                Navigation.findNavController(view).navigate(R.id.login, bundle);
             } else {
                 Toast.makeText(getContext(), "Credenciales invalidas.", Toast.LENGTH_LONG).show();
             }

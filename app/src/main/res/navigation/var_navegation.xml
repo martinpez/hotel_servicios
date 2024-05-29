@@ -41,5 +41,14 @@
         android:id="@+id/buy"
         android:name="acividad2.hotel_servicios.Buy"
         android:label="fragment_buy"
-        tools:layout="@layout/fragment_buy" />
+        tools:layout="@layout/fragment_buy" >
+        <action
+            android:id="@+id/action_buy_to_view_reservation"
+            app:destination="@id/view_reservation" />
+    </fragment>
+    <fragment
+        android:id="@+id/view_reservation"
+        android:name="acividad2.hotel_servicios.view_reservation"
+        android:label="fragment_view_reservation"
+        tools:layout="@layout/fragment_view_reservation" />
 </navigation>

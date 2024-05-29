@@ -23,6 +23,7 @@ import java.util.Objects;
 
 import acividad2.hotel_servicios.data.HotelDBHelper;
 import acividad2.hotel_servicios.data.Huesped;
+import acividad2.hotel_servicios.data.Telefono;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +38,7 @@ public class Login extends Fragment implements View.OnClickListener {
     private EditText login_password, login_email;
     private ImageView img_entry;
 
+    String telf = "";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -103,6 +105,10 @@ public class Login extends Fragment implements View.OnClickListener {
         btn_acc.setOnClickListener(this);
 
         db = new HotelDBHelper(getContext());
+
+        // bundle
+
+
     }
 
 
@@ -113,11 +119,14 @@ public class Login extends Fragment implements View.OnClickListener {
         Cursor cursor = db.getHuespedByUser(email, password);
 
         if (view.getId() == img_entry.getId()) {
-            if (cursor.moveToNext()){
-                Huesped hps = new Huesped(cursor);
-                Bundle bundle = new Bundle();
-                bundle.putString("name" , hps.getName());
-                Navigation.findNavController(view).navigate(R.id.cart, bundle);
+            if (cursor != null && cursor.moveToFirst()){
+                do {
+                    Huesped hps = new Huesped(cursor);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("email_user", hps.getEmail_huesped());
+                    bundle.putString("name", hps.getName());
+                    Navigation.findNavController(view).navigate(R.id.cart, bundle);
+                } while (cursor.moveToNext());
             } else {
                 Toast.makeText(getContext(),"Credenciales inválidas",Toast.LENGTH_LONG).show();
             }

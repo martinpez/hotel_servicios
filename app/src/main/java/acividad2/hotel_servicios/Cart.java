@@ -1,5 +1,6 @@
 package acividad2.hotel_servicios;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -18,6 +19,9 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import acividad2.hotel_servicios.data.CartContract;
+import acividad2.hotel_servicios.data.HotelDBHelper;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Cart#newInstance} factory method to
@@ -29,6 +33,7 @@ public class Cart extends Fragment  {
     private TextView txt_nombre_fit, price_1, price_2, price_3, price_4, price_5, price_6, price_7;
     private CheckBox rad_gui, rad_recre, rad_special, rad_vip, rad_gift, rad_room,rad_mass;
     private ImageView image_Button_User;
+    private HotelDBHelper db;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -40,6 +45,7 @@ public class Cart extends Fragment  {
     private String mParam1;
     private String mParam2;
     private String nombre_use;
+
 
 
     /**
@@ -82,6 +88,8 @@ public class Cart extends Fragment  {
     public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
         super.onViewStateRestored(savedInstanceState);
 
+        db = new HotelDBHelper(getContext());
+
         // IMAGESBUTTON
         image_Button_User = getActivity().findViewById(R.id.image_Button_User);
 
@@ -112,10 +120,12 @@ public class Cart extends Fragment  {
         nombre_use =  getArguments().getString("name");
         txt_nombre_fit.setText(nombre_use);
         bundle.putString("name_acc" ,getArguments().getString("name"));
+        // obtine el email del cliente desde el Login
+        String email = getArguments().getString("email_user");
+        bundle.putString("email_u" , email);
 
 
         // LOGICA DE LOS CHECK BOX
-
 
 
         rad_room.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -124,9 +134,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta CHEQUIADO y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice1", price_1.getText().toString());
+                    bundle.putString("rad_room", rad_room.getText().toString());
                 } else {
-                    bundle.remove("pice1");
+                    bundle.remove("rad_room");
                 }
             }
         });
@@ -137,9 +147,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice2", price_2.getText().toString());
+                    bundle.putString("rad_gui", rad_gui.getText().toString());
                 } else {
-                    bundle.remove("pice2");
+                    bundle.remove("rad_gui");
                 }
             }
         });
@@ -149,9 +159,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice3", price_3.getText().toString());
+                    bundle.putString("rad_gift", rad_gift.getText().toString());
                 } else {
-                    bundle.remove("pice3");
+                    bundle.remove("rad_gift");
                 }
             }
         });
@@ -161,9 +171,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice4", price_4.getText().toString());
+                    bundle.putString("rad_vip", rad_vip.getText().toString());
                 } else {
-                    bundle.remove("pice4");
+                    bundle.remove("rad_vip");
                 }
             }
         });
@@ -173,9 +183,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice5", price_5.getText().toString());
+                    bundle.putString("rad_recre", rad_recre.getText().toString());
                 } else {
-                    bundle.remove("pice5");
+                    bundle.remove("rad_recre");
                 }
             }
         });
@@ -185,9 +195,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice6", price_6.getText().toString());
+                    bundle.putString("rad_special", rad_special.getText().toString());
                 } else {
-                    bundle.remove("pice6");
+                    bundle.remove("rad_special");
                 }
             }
         });
@@ -197,9 +207,9 @@ public class Cart extends Fragment  {
                 //  revisa que el checkbox esta chekeado y con la clase bundle envia (put) el dato del texto
                 //  y con el remove elimina con la llave del put, cuando le quite el check   :)
                 if (ischek) {
-                    bundle.putString("pice7", price_7.getText().toString());
+                    bundle.putString("rad_mass", rad_mass.getText().toString());
                 } else {
-                    bundle.remove("pice7");
+                    bundle.remove("rad_mass");
                 }
             }
         });
@@ -208,6 +218,7 @@ public class Cart extends Fragment  {
             public void onClick(View view) {
                 if (view.getId()== btn_add.getId()){
                     Navigation.findNavController(view).navigate(R.id.buy, bundle);
+                    Toast.makeText(getContext() , "Usa el codigo 200 para \n Usarios nuevos  descuentos !",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -222,10 +233,48 @@ public class Cart extends Fragment  {
             }
         });
 
-
-
+        setItemPrices();
 
     }
+
+        // logica de la database cart
+    private void setItemPrices() {
+        Cursor cursor = db.getAllItems();
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String item_name = cursor.getString(cursor.getColumnIndexOrThrow(CartContract.CartEntry.COLUMN_NAME));
+                String item_price = cursor.getString(cursor.getColumnIndexOrThrow(CartContract.CartEntry.COLUMN_ITEM_PRICE));
+
+                System.out.println("nombre " + item_name);
+                System.out.println("precio: " + item_price);
+
+
+
+                // Configura los precios en los EditText correspondientes
+
+                if (rad_room.getText().toString().equals(item_name)) {
+                    price_1.setText(item_price);
+                } else if (rad_gui.getText().toString().equals(item_name)) {
+                    price_2.setText(item_price);
+                } else if (rad_gift.getText().toString().equals(item_name)){
+                    price_3.setText(item_price);
+                } else if (rad_vip.getText().toString().equals(item_name)) {
+                    price_4.setText(item_price);
+                } else if (rad_recre.getText().toString().equals(item_name)) {
+                    price_5.setText(item_price);
+                } else if (rad_special.getText().toString().equals(item_name)) {
+                    price_6.setText(item_price);
+                } else if (rad_mass.getText().toString().equals(item_name)) {
+                    price_7.setText(item_price);
+                }
+
+            } while (cursor.moveToNext());
+
+            cursor.close();
+        }
+    }
+
     // LOGICA DEL POPUPMENU
         private void  popupmenu(){
             PopupMenu p = new PopupMenu(getContext() , image_Button_User);
