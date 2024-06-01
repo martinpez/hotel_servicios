@@ -225,50 +225,50 @@ public class Buy extends Fragment implements View.OnClickListener {
                     total += price;
                     selectedItemIds.add(itemId);
                 } else {
-                 //   txt_precio_3_buy.setText(defautValue);
+                    //   txt_precio_3_buy.setText(defautValue);
                 }
                 if (rad_gui.equals(item_name)) {
                     txt_precio_4_buy.setText(item_price);
                     total += price;
                     selectedItemIds.add(itemId);
                 } else {
-              //      txt_precio_4_buy.setText(defautValue);
+                    //      txt_precio_4_buy.setText(defautValue);
                 }
                 if (rad_gift.equals(item_name)) {
                     txt_precio_6_buy.setText(item_price);
                     total += price;
                     selectedItemIds.add(itemId);
                 } else {
-                  //  txt_precio_6_buy.setText(defautValue);
+                    //  txt_precio_6_buy.setText(defautValue);
                 }
                 if (rad_vip.equals(item_name)) {
                     txt_precio_7_buy.setText(item_price);
                     total += price;
                     selectedItemIds.add(itemId);
                 }else {
-                //    txt_precio_7_buy.setText(defautValue);
+                    //    txt_precio_7_buy.setText(defautValue);
                 }
                 if (rad_recre.equals(item_name)) {
                     txt_precio_8_buy.setText(item_price);
                     total += price;
                     selectedItemIds.add(itemId);
                 } else {
-                   // txt_precio_8_buy.setText(defautValue);
+                    // txt_precio_8_buy.setText(defautValue);
                 }
                 if (rad_special.equals(item_name)){
                     txt_precio_9_buy.setText(item_price);
                     total += price;
                     selectedItemIds.add(itemId);
                 }else{
-                 //   txt_precio_9_buy.setText(defautValue);
+                    //   txt_precio_9_buy.setText(defautValue);
                 }
-                 if (rad_mass.equals(item_name)) {
-                     txt_precio_10_buy.setText(item_price);
-                     total += price;
-                     selectedItemIds.add(itemId);
+                if (rad_mass.equals(item_name)) {
+                    txt_precio_10_buy.setText(item_price);
+                    total += price;
+                    selectedItemIds.add(itemId);
                 }else {
-                // txt_precio_10_buy.setText(defautValue);
-                 }
+                    // txt_precio_10_buy.setText(defautValue);
+                }
 
             } while (cursor.moveToNext());
 
@@ -361,7 +361,7 @@ public class Buy extends Fragment implements View.OnClickListener {
         String Telef_user =getArguments().getString("email_u");
 
         int id_user = db.getColIdByEmail(Telef_user);
-       // System.out.println("Telefono de cliente : "  + getArguments().getString("tel"));
+        // System.out.println("Telefono de cliente : "  + getArguments().getString("tel"));
         if (id_user == -1) {
             Toast.makeText(getContext(), "Error al obtener el ID del usuario mediante el telefono", Toast.LENGTH_LONG).show();
             return;
@@ -372,7 +372,7 @@ public class Buy extends Fragment implements View.OnClickListener {
         for (int itemId : selectedItemIds) {
             System.out.println("codigo de reserva : " + codigoReserva + " User_id " + userId + " Id_user " + id_user + " id_Item " + itemId);
             db.insertReservation(codigoReserva, userId, id_user, itemId);
-           // Toast.makeText(getContext(), "Reserva realizada con éxito", Toast.LENGTH_LONG).show();
+            // Toast.makeText(getContext(), "Reserva realizada con éxito", Toast.LENGTH_LONG).show();
         }
         // Insertar la reserva en la base de datos
 
@@ -391,6 +391,4 @@ public class Buy extends Fragment implements View.OnClickListener {
             Navigation.findNavController(view).navigate(R.id.cart,bundle);
         }
     }
-
-
 }

@@ -1,5 +1,6 @@
 package acividad2.hotel_servicios;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,8 +10,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.Navigation;
 
 import acividad2.hotel_servicios.data.HotelDBHelper;
 
@@ -20,7 +28,6 @@ import acividad2.hotel_servicios.data.HotelDBHelper;
  * create an instance of this fragment.
  */
 public class view_reservation extends Fragment {
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +38,7 @@ public class view_reservation extends Fragment {
     private String mParam2;
 
     private TextView n_reserva;
-
+    private ImageView button_back;
     private HotelDBHelper db;
 
     public view_reservation() {
@@ -71,10 +78,6 @@ public class view_reservation extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.view_reservation, container, false);
 
-
-
-
-
     }
 
     @Override
@@ -82,13 +85,17 @@ public class view_reservation extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         db = new HotelDBHelper(getContext());
-
-       int numero_reserva =  db.getLastReservationNumber();
-
-        n_reserva = (TextView) getActivity().findViewById(R.id.n_reserva);
-
+        int numero_reserva = db.getLastReservationNumber();
+        n_reserva = view.findViewById(R.id.n_reserva);
         n_reserva.setText(String.valueOf(numero_reserva));
 
+        button_back = view.findViewById(R.id.button_back);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_view_reservation_to_login);
+            }
 
+        });
     }
 }

@@ -50,5 +50,9 @@
         android:id="@+id/view_reservation"
         android:name="acividad2.hotel_servicios.view_reservation"
         android:label="fragment_view_reservation"
-        tools:layout="@layout/fragment_view_reservation" />
+        tools:layout="@layout/fragment_view_reservation" >
+        <action
+            android:id="@+id/action_view_reservation_to_login"
+            app:destination="@id/login" />
+    </fragment>
 </navigation>
