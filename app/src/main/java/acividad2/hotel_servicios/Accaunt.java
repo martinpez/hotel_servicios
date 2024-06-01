@@ -175,5 +175,4 @@ public class Accaunt extends Fragment implements View.OnClickListener {
             Toast.makeText(getContext(), "Credenciales invalidas.", Toast.LENGTH_LONG).show();
         }
     }*/
-
 }

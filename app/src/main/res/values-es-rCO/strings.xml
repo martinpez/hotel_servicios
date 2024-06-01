@@ -23,8 +23,8 @@
     <string name="txt_reservat">Reservaciones</string>
     <string name="inp_kicks">Numero de persona</string>
     <string name="txt_welcome">"Bienvenido \nHotel "</string>
-    <string name="reserva_realizada">Reserva confirmada\\n Número de reserva:</string>
-    <string name="gracias_reserva">Gracias por reservar con nosotros\\n Esperamos volver a verte pronto y brindarte un servicio excepcional:).</string>
+    <string name="reserva_realizada">Reserva confirmada\n Número de reserva:</string>
+    <string name="gracias_reserva">Gracias por reservar con nosotros\n Esperamos volver a verte pronto y brindarte un servicio excepcional:).</string>
     <string name="btnlinear">Registrar Cuenta</string>
     <string name="discon_menu">Canjear descuento</string>
     <string name="changePrice_menu">Cambio de precio</string>

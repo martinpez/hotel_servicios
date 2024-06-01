@@ -155,10 +155,6 @@ public class Buy extends Fragment implements View.OnClickListener {
                 edit_discount.setText("");
                 dismissKeyboard(view);
                 Toast.makeText(getContext(), "Descuento aplicado " , Toast.LENGTH_LONG).show();
-
-
-
-
             }
         });
 

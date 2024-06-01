@@ -46,8 +46,6 @@ public class Cart extends Fragment  {
     private String mParam2;
     private String nombre_use;
 
-
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.

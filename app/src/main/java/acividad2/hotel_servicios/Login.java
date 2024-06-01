@@ -31,7 +31,6 @@ import acividad2.hotel_servicios.data.Telefono;
  * create an instance of this fragment.
  */
 public class Login extends Fragment implements View.OnClickListener {
-
     private HotelDBHelper db;
     private Button btn_acc;
     private EditText login_password, login_email;

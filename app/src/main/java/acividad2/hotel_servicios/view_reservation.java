@@ -79,7 +79,6 @@ public class view_reservation extends Fragment {
         return inflater.inflate(R.layout.view_reservation, container, false);
 
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
