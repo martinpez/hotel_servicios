@@ -51,10 +51,3 @@ Instructions for using the application, including how to create an account, log 
 </table>
 
 
-## Contribution
-
-Instructions for contributing to the project, including how to report issues and submit pull requests.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
