@@ -1,0 +1,30 @@
+#bgvideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1; /* para que quede detrás del contenido */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* centrado horizontal */
+  align-items: center;     /* centrado vertical */
+  height: 100vh;           /* altura completa ventana */
+}
+
+#inciologin {
+  width: 300px;  /* ancho fijo para que se note el centrado */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  background-color: #fafafa;
+}

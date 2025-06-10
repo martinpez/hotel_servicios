@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Inicio Sesión</title>
+    <link rel="stylesheet" href="/Frontend/css/index.css">
+</head>
+<body>
+    <video autoplay muted loop id="bgvideo">
+        <source src="/Recursos/video_mar.mp4" type="video/mp4"/>
+
+    </video>
+    <div id="iniciologin">
+        <div id="idlogin">
+            <h1>
+                Inicio Sesión
+            </h1>
+        </div>
+        <form>
+            <div id="idlabel_usuario">
+                <label for="usuario">
+                    Usuario
+                </label>
+            </div>
+            <div id="usuario">
+                <input type="text" id="usuario" required="true" placeholder="Ingrese su usuario"/>
+            </div>
+            <div>
+                <label for="password_usuario">
+                    Contraseña
+                </label>
+            </div>
+            <div>
+                <input type="password" id="password_usuario" required="true" />
+            </div>
+            <div id="butonlogin">
+                <button type="submit">Ingresar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

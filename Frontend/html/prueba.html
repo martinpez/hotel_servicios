@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prueba Video Fondo</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      overflow: hidden;
+    }
+    #bgvideo {
+      position: fixed;
+      right: 0; bottom: 0;
+      min-width: 100%; min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    #contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      margin-top: 50vh;
+      transform: translateY(-50%);
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop id="bgvideo">
+    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+    Tu navegador no soporta video.
+  </video>
+  <div id="contenido">Si ves esto y video animado, funciona</div>
+</body>
+</html>
